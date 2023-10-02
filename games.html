@@ -183,14 +183,10 @@
             overflow: hidden;
             margin: 10px; /* Add margin for spacing */
             color: white; /* Text color */
-        }
-
-        /* Styles for the image */
-        .box-image {
-            width: 60px;
-            height: 60px;
-            margin-right: 10px;
-            border-radius: 15px; /* Add border radius to the image */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
 
         /* Styles for the title */
@@ -206,117 +202,93 @@
             margin-bottom: 10px;
         }
 
-        /* Styles for the ">" icon */
-        .box-link {
-            font-size: 24px;
-            position: absolute;
-            top: 10px;
-            right: -30px;
-            transition: right 0.3s ease-in-out;
+        /* Styles for the "Play" button */
+        .play-button {
+            background-color: #0077ff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        /* Smooth grow effect on hover for the "Play" button */
+        .box-container:hover .play-button {
+            transform: scale(1.1);
         }
 
         /* Hover effect */
         .box-container:hover {
             background-color: rgba(0, 0, 0, 0.5); /* Background color with opacity */
         }
-
-        /* Adjust the ">" icon position on hover */
-        .box-container:hover .box-link {
-            right: 10px;
-        }
     </style>
 </head>
 <body>
     <!-- Container for the boxes -->
     <div class="box-container-wrapper">
-        <!-- Box 1 - PhotoMath -->
+        <!-- Box 1 - Among Us -->
         <a href="https://galactic-mu.vercel.app/gfiles/among-us/" class="box-container">
-            <img class="box-image" src="https://user-images.githubusercontent.com/145090940/272100048-ee8ad690-fe94-47b9-a948-a8185db46189.jpg" alt="Image">
-            <div class="box-text">
-                <div class="box-title">Among Us</div>
-                <div class="box-description">Among Us Unblocked</div>
-            </div>
-            <div class="box-link">&gt;</div>
+            <div class="box-title">Among Us</div>
+            <div class="box-description">Among Us Unblocked</div>
+            <button class="play-button">Play</button>
         </a>
         
         <!-- Box 2 - Minecraft -->
         <a href="https://galactic-mu.vercel.app/gfiles/eaglercraft/" class="box-container">
-            <img class="box-image" src="https://cdn.discordapp.com/attachments/1153889879114141806/1154257585025863690/IMG_3249.png" alt="Image">
-            <div class="box-text">
-                <div class="box-title">Minecraft</div>
-                <div class="box-description">Minecraft Unblocked</div>
-            </div>
-            <div class="box-link">&gt;</div>
+            <div class="box-title">Minecraft</div>
+            <div class="box-description">Minecraft Unblocked</div>
+            <button class="play-button">Play</button>
         </a>
 
-        <!-- Box 3 - Tiktok -->
+        <!-- Box 3 - Retrobowl -->
         <a href="https://galactic-mu.vercel.app/gfiles/retro-bowl/" class="box-container">
-            <img class="box-image" src="https://cdn.discordapp.com/attachments/1153889879114141806/1154257863741558864/IMG_3252.png" alt="Image">
-            <div class="box-text">
-                <div class="box-title">Retrobowl</div>
-                <div class="box-description">Retrobowl Unblocked </div>
-            </div>
-            <div class="box-link">&gt;</div>
+            <div class="box-title">Retrobowl</div>
+            <div class="box-description">Retrobowl Unblocked</div>
+            <button class="play-button">Play</button>
         </a>
 
-        <!-- Box 4 - Twitter -->
+        <!-- Box 4 - Cookie Clicker -->
         <a href="https://galactic-mu.vercel.app/gfiles/cookieclicker/" class="box-container">
-            <img class="box-image" src="https://cdn.discordapp.com/attachments/1153889879114141806/1154257765800357968/IMG_3251.png" alt="Image">
-            <div class="box-text">
-                <div class="box-title">Cookie Clicker</div>
-                <div class="box-description">Cookie Clicker Unblocked </div>
-            </div>
-            <div class="box-link">&gt;</div>
+            <div class="box-title">Cookie Clicker</div>
+            <div class="box-description">Cookie Clicker Unblocked</div>
+            <button class="play-button">Play</button>
         </a>
 
-        <!-- Box 5 - Youtube -->
+        <!-- Box 5 - Moto X3M -->
         <a href="https://galactic-mu.vercel.app/gfiles/motox3m/" class="box-container">
-            <img class="box-image" src="https://cdn.discordapp.com/attachments/1153889879114141806/1154257690239979543/IMG_3250.png" alt="Image">
-            <div class="box-text">
-                <div class="box-title">Moto X3M</div>
-                <div class="box-description">Moto X3M Unblocked</div>
-            </div>
-            <div class="box-link">&gt;</div>
+            <div class="box-title">Moto X3M</div>
+            <div class="box-description">Moto X3M Unblocked</div>
+            <button class="play-button">Play</button>
         </a>
         
-        <!-- Box 6 - Discord Enmity -->
+        <!-- Box 6 - Slope -->
         <a href="https://galactic-mu.vercel.app/gfiles/slope/" class="box-container">
-            <img class="box-image" src="https://cdn.discordapp.com/attachments/1153889879114141806/1154258462369382460/IMG_3254.png" alt="Image">
-            <div class="box-text">
-                <div class="box-title">Slope</div>
-                <div class="box-description">Slope Unblocked </div>
-            </div>
-            <div class="box-link">&gt;</div>
+            <div class="box-title">Slope</div>
+            <div class="box-description">Slope Unblocked</div>
+            <button class="play-button">Play</button>
         </a>
       
-        <!-- Box 7 - Undertale -->
+        <!-- Box 7 - Subway Surfers -->
         <a href="https://galactic-mu.vercel.app/gfiles/subway-surfers/" class="box-container">
-            <img class="box-image" src="https://cdn.discordapp.com/attachments/1153889879114141806/1154520675088875683/icon.png" alt="Image">
-            <div class="box-text">
-                <div class="box-title">Subway Surfers</div>
-                <div class="box-description">Subway Surfers Unblocked</div>
-            </div>
-            <div class="box-link">&gt;</div>
+            <div class="box-title">Subway Surfers</div>
+            <div class="box-description">Subway Surfers Unblocked</div>
+            <button class="play-button">Play</button>
         </a>
         
         <!-- Box 8 - Madalin Stunt Cars 2 -->
         <a href="https://galactic-mu.vercel.app/gfiles/madalin-cars-2/" class="box-container">
-            <img class="box-image" src="https://cdn.discordapp.com/attachments/1153889879114141806/1154520675088875683/icon.png" alt="Image">
-            <div class="box-text">
-                <div class="box-title">Madalin Stunt Cars 2</div>
-                <div class="box-description">Madalin Stunt Cars 2 Unblocked</div>
-            </div>
-            <div class="box-link">&gt;</div>
+            <div class="box-title">Madalin Stunt Cars 2</div>
+            <div class="box-description">Madalin Stunt Cars 2 Unblocked</div>
+            <button class="play-button">Play</button>
         </a>
         
         <!-- Box 9 - Temple Run 2 -->
         <a href="https://galactic-mu.vercel.app/gfiles/temple-run-2/" class="box-container">
-            <img class="box-image" src="https://cdn.discordapp.com/attachments/1153889879114141806/1154520675088875683/icon.png" alt="Image">
-            <div class="box-text">
-                <div class="box-title">Temple Run 2</div>
-                <div class="box-description">Temple Run 2 Unblocked</div>
-            </div>
-            <div class="box-link">&gt;</div>
+            <div class="box-title">Temple Run 2</div>
+            <div class="box-description">Temple Run 2 Unblocked</div>
+            <button class="play-button">Play</button>
         </a>
     </div>
 
