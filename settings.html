@@ -159,12 +159,12 @@
         }
 
         .settings-container {
-            max-width: 400px;
+            width: 50%;
             margin: 50px auto;
             padding: 20px;
             background-color: #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            border-radius: 5px;
+            border-radius: 10px;
         }
 
         .theme-button {
@@ -204,6 +204,20 @@
         .checkbox-label {
             margin-left: 10px;
         }
+
+        .redirect-button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .redirect-button:hover {
+            background-color: #0056b3;
+        }
     </style>
 </head>
 <body>
@@ -215,9 +229,13 @@
 
         <h2>Open Links in New Tab</h2>
         <div class="checkbox-container">
-            <input type="checkbox" id="openInBlankCheckbox" onchange="updateLinkTarget()">
+            <input type="checkbox" id="openInBlankCheckbox">
             <label class="checkbox-label" for="openInBlankCheckbox">Open in New Tab</label>
         </div>
+
+        <h2>Redirect to <code>about:blank</code></h2>
+        <input type="text" id="redirectUrl" placeholder="Enter URL">
+        <button class="redirect-button" onclick="redirectBlank()">Redirect</button>
     </div>
 
     <script>
@@ -249,7 +267,7 @@
             document.body.style.color = textColor;
         }
 
-        // Function to update link target based on checkbox
+        // Function to open links in a new tab
         function updateLinkTarget() {
             const openInBlankCheckbox = document.getElementById('openInBlankCheckbox');
             const links = document.querySelectorAll('a');
@@ -261,6 +279,14 @@
                     link.removeAttribute('target'); // Remove target attribute
                 }
             });
+        }
+
+        // Function to redirect to about:blank
+        function redirectBlank() {
+            const redirectUrl = document.getElementById('redirectUrl').value;
+            if (redirectUrl) {
+                window.open('about:blank').location.href = redirectUrl;
+            }
         }
     </script>
 </body>
