@@ -164,14 +164,15 @@
             display: flex;
             flex-wrap: wrap; /* Allow boxes to wrap to a new row */
             justify-content: center; /* Center boxes horizontally */
+            background: linear-gradient(135deg, #ff7f50, #000); /* Halloween gradient background (orange and black) */
+            padding: 20px; /* Add padding to create space between rows */
         }
 
         /* Styles for the container */
         .box-container {
-          width: 100%; /* Full width on mobile devices */
+            width: calc(50% - 20px); /* 50% width with spacing in between */
             max-width: 300px; /* Limit maximum width */
-            background: url('https://cdn.discordapp.com/attachments/1153889879114141806/1154239900930023516/deyc41r-a5463947-264a-431b-a43f-ef4ade621619_1.png'); /* Set your image URL here */
-            background-size: cover;
+            background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
             border-radius: 15px; /* Increased border radius */
             padding: 20px;
@@ -181,6 +182,7 @@
             position: relative;
             overflow: hidden;
             margin: 10px; /* Add margin for spacing */
+            color: white; /* Text color */
         }
 
         /* Styles for the image */
@@ -196,13 +198,11 @@
             font-size: 18px;
             font-weight: bold;
             margin-bottom: 5px;
-            color: white; /* Text color */
         }
 
         /* Styles for the description */
         .box-description {
             font-size: 14px;
-            color: #ccc; /* Text color */
             margin-bottom: 10px;
         }
 
@@ -213,7 +213,6 @@
             top: 10px;
             right: -30px;
             transition: right 0.3s ease-in-out;
-            color: white; /* Text color */
         }
 
         /* Hover effect */
@@ -232,9 +231,8 @@
     <div class="box-container-wrapper">
         <!-- Box 1 - PhotoMath -->
         <a href="https://galactic-mu.vercel.app/gfiles/among-us/" class="box-container">
-                       <img class="box-image" src="https://cdn.discordapp.com/attachments/1153889879114141806/1154257585025863690/IMG_3249.png" alt="Image">
+            <img class="box-image" src="https://cdn.discordapp.com/attachments/1153889879114141806/1154257585025863690/IMG_3249.png" alt="Image">
             <div class="box-text">
-                
                 <div class="box-title">Among Us</div>
                 <div class="box-description">Among Us Unblocked</div>
             </div>
@@ -262,8 +260,7 @@
         </a>
 
         <!-- Box 4 - Twitter -->
-        <a href="https://galactic-mu.vercel.app/gfiles/cookieclicker/"
- class="box-container">
+        <a href="https://galactic-mu.vercel.app/gfiles/cookieclicker/" class="box-container">
             <img class="box-image" src="https://cdn.discordapp.com/attachments/1153889879114141806/1154257765800357968/IMG_3251.png" alt="Image">
             <div class="box-text">
                 <div class="box-title">Cookie Clicker</div>
@@ -273,8 +270,7 @@
         </a>
 
         <!-- Box 5 - Youtube -->
-        <a href="https://galactic-mu.vercel.app/gfiles/motox3m/
-" class="box-container">
+        <a href="https://galactic-mu.vercel.app/gfiles/motox3m/" class="box-container">
             <img class="box-image" src="https://cdn.discordapp.com/attachments/1153889879114141806/1154257690239979543/IMG_3250.png" alt="Image">
             <div class="box-text">
                 <div class="box-title">Moto X3M</div>
@@ -284,8 +280,7 @@
         </a>
         
         <!-- Box 6 - Discord Enmity -->
-        <a href="https://galactic-mu.vercel.app/gfiles/slope/
-" class="box-container">
+        <a href="https://galactic-mu.vercel.app/gfiles/slope/" class="box-container">
             <img class="box-image" src="https://cdn.discordapp.com/attachments/1153889879114141806/1154258462369382460/IMG_3254.png" alt="Image">
             <div class="box-text">
                 <div class="box-title">Slope</div>
@@ -303,10 +298,9 @@
             </div>
             <div class="box-link">&gt;</div>
         </a>
-    </div>
- 
-    
-     <a href="https://galactic-mu.vercel.app/gfiles/madalin-cars-2/" class="box-container">
+        
+        <!-- Box 8 - Madalin Stunt Cars 2 -->
+        <a href="https://galactic-mu.vercel.app/gfiles/madalin-cars-2/" class="box-container">
             <img class="box-image" src="https://cdn.discordapp.com/attachments/1153889879114141806/1154520675088875683/icon.png" alt="Image">
             <div class="box-text">
                 <div class="box-title">Madalin Stunt Cars 2</div>
@@ -314,9 +308,9 @@
             </div>
             <div class="box-link">&gt;</div>
         </a>
-    </div>
-
-         <a href="https://galactic-mu.vercel.app/gfiles/temple-run-2/" class="box-container">
+        
+        <!-- Box 9 - Temple Run 2 -->
+        <a href="https://galactic-mu.vercel.app/gfiles/temple-run-2/" class="box-container">
             <img class="box-image" src="https://cdn.discordapp.com/attachments/1153889879114141806/1154520675088875683/icon.png" alt="Image">
             <div class="box-text">
                 <div class="box-title">Temple Run 2</div>
@@ -325,8 +319,6 @@
             <div class="box-link">&gt;</div>
         </a>
     </div>
-
-  
 
     <script>
         // Fade in the boxes when the page loads
