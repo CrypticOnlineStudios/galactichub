@@ -8,9 +8,9 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background: url('https://cdn.discordapp.com/attachments/1137482366047232163/1158288029878861875/wp4978351.jpg?ex=651bb34a&is=651a61ca&hm=51a04c8ccd3c05346ce057f8857886172ec10565d72f4b56e1afd75255095df4&') no-repeat center center fixed; /* Halloween-themed background image */
-            background-size: cover; /* Cover the entire viewport */
-            color: #FFFFFF; /* Text color (white) */
+            background: url('https://cdn.discordapp.com/attachments/1137482366047232163/1158288029878861875/wp4978351.jpg?ex=651bb34a&is=651a61ca&hm=51a04c8ccd3c05346ce057f8857886172ec10565d72f4b56e1afd75255095df4&') no-repeat center center fixed;
+            background-size: cover;
+            color: #FFFFFF;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
@@ -18,17 +18,19 @@
 
         /* Navbar styles */
         .navbar {
-            background: linear-gradient(135deg, #ff6c00, #ff0061); /* Halloween gradient background color for the navbar */
-            color: #FFFFFF; /* Text color (white) */
+            background: linear-gradient(135deg, #ff6c00, #ff0061);
+            color: #FFFFFF;
             padding: 20px;
             text-align: center;
-            position: sticky;
+            position: fixed; /* Make the navbar fixed */
             top: 0;
+            left: 0; /* Add left: 0 to make it align with the left edge of the viewport */
+            right: 0; /* Add right: 0 to make it align with the right edge of the viewport */
             z-index: 999;
-            transform: translateY(-100%); /* Start offscreen */
-            transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth background and transform transition */
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-            animation: jumpIn 0.5s ease-in-out 0.5s both; /* Jump-in animation */
+            transform: translateY(-100%);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            animation: jumpIn 0.5s ease-in-out 0.5s both;
         }
 
         .navbar-links {
@@ -40,38 +42,38 @@
 
         .navbar-link {
             margin: 0 15px;
-            font-size: 28px; /* Increased font size */
+            font-size: 28px;
             cursor: pointer;
             transition: color 0.3s ease, transform 0.3s ease;
-            display: flex; /* Display image and text side by side */
-            align-items: center; /* Center vertically */
-            position: relative; /* Relative positioning for the underline */
+            display: flex;
+            align-items: center;
+            position: relative;
         }
 
         .navbar-link img {
-            width: 24px; /* Adjust the image size */
-            margin-right: 5px; /* Add spacing between image and text */
+            width: 24px;
+            margin-right: 5px;
         }
 
         .navbar-link::after {
             content: "";
             position: absolute;
-            bottom: -4px; /* Adjust the distance from text to underline */
+            bottom: -4px;
             left: 0;
             width: 100%;
-            height: 2px; /* Underline height */
-            background-color: #FFA500; /* Halloween orange color for the underline */
-            transform: scaleX(0); /* Initially hidden */
-            transition: transform 0.3s ease; /* Smooth transition for the underline */
+            height: 2px;
+            background-color: #FFA500;
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
         }
 
         .navbar-link:hover {
-            color: #FFFFFF; /* White color on hover */
-            transform: translateY(-3px); /* Slight upward lift on hover */
+            color: #FFFFFF;
+            transform: translateY(-3px);
         }
 
         .navbar-link:hover::after {
-            transform: scaleX(1); /* Show underline on hover */
+            transform: scaleX(1);
         }
 
         .navbar-link a {
@@ -115,103 +117,3 @@
     </div>
 </body>
 </html>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galactic</title>
-    <style>
-        /* Center the box both horizontally and vertically */
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-        }
-
-        /* Styles for the container */
-        .box-container {
-            width: 300px;
-            background-color: #ffffff;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-            border-radius: 15px; /* Increased border radius */
-            padding: 20px;
-            display: inline-block; /* Removed 'none' to make it initially visible */
-            opacity: 0;
-            transition: opacity 0.5s ease-in-out;
-            cursor: pointer;
-            position: relative; /* Removed 'center' and added 'relative' for button positioning */
-            overflow: hidden; /* Added to hide the button initially */
-            text-align: center; /* Center-align text and button */
-        }
-
-        /* Styles for the image */
-        .box-image {
-            width: 60px;
-            height: 60px;
-            margin-right: 10px;
-            display: inline-block; /* Display the image inline */
-            vertical-align: middle; /* Align image vertically in the middle */
-        }
-
-        /* Styles for the title */
-        .box-title {
-            font-size: 18px;
-            font-weight: bold;
-            display: inline-block; /* Display the title inline */
-            vertical-align: middle; /* Align title vertically in the middle */
-        }
-
-        /* Styles for the description */
-        .box-description {
-            font-size: 14px;
-            color: #666;
-            margin-bottom: 10px;
-        }
-
-        /* Styles for the button */
-        .box-button {
-            background-color: #007BFF; /* Button background color */
-            color: #ffffff; /* Button text color */
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background-color 0.3s ease-in-out; /* Smooth transition for button background */
-        }
-
-        /* Hover effect for the button */
-        .box-button:hover {
-            background-color: #0056b3; /* Darker background color on hover */
-        }
-    </style>
-</head>
-<body>
-    <div class="box-container">
-        <img class="box-image" src="https://cdn.discordapp.com/attachments/1137482366047232163/1158277849845858336/download_6.jpeg?ex=651ba9cf&is=651a584f&hm=3d46b189d92e43abe77d7c5842c74995bd093972dd7285aa25bdd87e092ccc1c&" alt="Image">
-        <div class="box-text">
-            <div class="box-title">Cookie Clicker</div>
-            <div class="box-description">Play Cookie Clicker</div>
-        </div>
-        <button class="box-button" onclick="window.location.href='info app.html'">Play</button>
-    </div>
-
-    <script>
-        // Fade in the box when the page loads
-        window.addEventListener('load', function() {
-            const box = document.querySelector('.box-container');
-            box.style.opacity = '1';
-        });
-    </script>
-</body>
-</html>
-<script src='https://cdn.jsdelivr.net/npm/@widgetbot/crate@3' async defer>
-    new Crate({
-        server: '1158282539581046806', // Galactic Hub | Unblocked
-        channel: '1158283726787182622' // #widget
-    })
-</script>
