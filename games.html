@@ -124,6 +124,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your App</title>
     <style>
+        /* Navbar styles */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
         /* Container styles */
         .app-container {
             width: 250px;
@@ -137,7 +149,8 @@
             justify-content: center;
             position: relative;
             transition: transform 0.3s ease-in-out;
-            margin-left: 20px; /* Added margin for positioning on the left */
+            margin-left: 20px;
+            margin-top: 50px; /* Added margin to go below the navbar */
         }
 
         /* Title styles */
@@ -177,13 +190,21 @@
         .play-button:hover {
             background-color: #e64a19;
         }
+
+        /* Give some space for the content below */
+        body {
+            margin-top: 400px; /* Adjust as needed */
+        }
     </style>
 </head>
 <body>
+    <div class="navbar">Your Navbar</div>
     <div class="app-container">
         <h1 class="app-title">Your App Name</h1>
         <img class="app-image" src="your-image-url.jpg" alt="App Image">
         <button class="play-button">Play</button>
     </div>
+    <!-- Content below the box -->
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 </body>
 </html>
