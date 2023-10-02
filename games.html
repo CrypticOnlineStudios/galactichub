@@ -142,6 +142,181 @@
     </script>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fading Box</title>
+    <style>
+        /* Center the box both horizontally and vertically */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0; /* Add a background color */
+        }
+
+        /* Container for the boxes */
+        .box-container-wrapper {
+            display: flex;
+            flex-wrap: wrap; /* Allow boxes to wrap to a new row */
+            justify-content: center; /* Center boxes horizontally */
+        }
+
+        /* Styles for the container */
+        .box-container {
+            width: 100%; /* Full width on mobile devices */
+            max-width: 300px; /* Limit maximum width */
+            background: url('https://cdn.discordapp.com/attachments/1153889879114141806/1154239900930023516/deyc41r-a5463947-264a-431b-a43f-ef4ade621619_1.png'); /* Set your image URL here */
+            background-size: cover;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 15px; /* Increased border radius */
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            margin: 10px; /* Add margin for spacing */
+        }
+
+        /* Styles for the image */
+        .box-image {
+            width: 60px;
+            height: 60px;
+            margin-right: 10px;
+            border-radius: 15px; /* Add border radius to the image */
+        }
+
+        /* Styles for the title */
+        .box-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: white; /* Text color */
+        }
+
+        /* Styles for the description */
+        .box-description {
+            font-size: 14px;
+            color: #ccc; /* Text color */
+            margin-bottom: 10px;
+        }
+
+        /* Styles for the ">" icon */
+        .box-link {
+            font-size: 24px;
+            position: absolute;
+            top: 10px;
+            right: -30px;
+            transition: right 0.3s ease-in-out;
+            color: white; /* Text color */
+        }
+
+        /* Hover effect */
+        .box-container:hover {
+            background-color: rgba(0, 0, 0, 0.5); /* Background color with opacity */
+        }
+
+        /* Adjust the ">" icon position on hover */
+        .box-container:hover .box-link {
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Container for the boxes -->
+    <div class="box-container-wrapper">
+        <!-- Box 1 - PhotoMath -->
+        <a href="https://shadowgmes-github-io-two.vercel.app/gfiles/among-us/" class="box-container">
+            <img class="box-image" src="https://photos.app.goo.gl/K7fG4VQDKLTDro4e6" alt="Image">
+            <div class="box-text">
+                <div class="box-title">Among Us</div>
+                <div class="box-description">Among Us Unblocked</div>
+            </div>
+            <div class="box-link">&gt;</div>
+        </a>
+        
+        <!-- Box 2 - Minecraft -->
+        <a href="itms-services://?action=download-manifest&url=https://daisuke1227.github.io/Daisuke-s-Revamped/Minecraft.plist
+" class="box-container">
+            <img class="box-image" src="https://cdn.discordapp.com/attachments/1153889879114141806/1154257585025863690/IMG_3249.png" alt="Image">
+            <div class="box-text">
+                <div class="box-title">Minecraft Free</div>
+                <div class="box-description">Minecraft but free</div>
+            </div>
+            <div class="box-link">&gt;</div>
+        </a>
+
+        <!-- Box 3 - Tiktok -->
+        <a href="itms-services://?action=download-manifest&url=https://daisuke1227.github.io/Daisuke-s-Revamped/TikTok.plist
+" class="box-container">
+            <img class="box-image" src="https://cdn.discordapp.com/attachments/1153889879114141806/1154257863741558864/IMG_3252.png" alt="Image">
+            <div class="box-text">
+                <div class="box-title">Tiktok</div>
+                <div class="box-description">Tiktok With Modded Features </div>
+            </div>
+            <div class="box-link">&gt;</div>
+        </a>
+
+        <!-- Box 4 - Twitter -->
+        <a href="itms-services://?action=download-manifest&url=https://daisuke1227.github.io/Daisuke-s-Revamped/Twitter.plist
+" class="box-container">
+            <img class="box-image" src="https://cdn.discordapp.com/attachments/1153889879114141806/1154257765800357968/IMG_3251.png" alt="Image">
+            <div class="box-text">
+                <div class="box-title">Twitter/X</div>
+                <div class="box-description">Twitter/X With Modded Features </div>
+            </div>
+            <div class="box-link">&gt;</div>
+        </a>
+
+        <!-- Box 5 - Youtube -->
+        <a href="itms-services://?action=download-manifest&url=https://daisuke1227.github.io/Daisuke-s-Revamped/YouTube.plist
+" class="box-container">
+            <img class="box-image" src="https://cdn.discordapp.com/attachments/1153889879114141806/1154257690239979543/IMG_3250.png" alt="Image">
+            <div class="box-text">
+                <div class="box-title">Youtube</div>
+                <div class="box-description">Youtube With Modded Features </div>
+            </div>
+            <div class="box-link">&gt;</div>
+        </a>
+        
+        <!-- Box 6 - Discord Enmity -->
+        <a href="itms-services://?action=download-manifest&url=https://daisuke1227.github.io/Daisuke-s-Revamped/Enmity.plist
+" class="box-container">
+            <img class="box-image" src="https://cdn.discordapp.com/attachments/1153889879114141806/1154258462369382460/IMG_3254.png" alt="Image">
+            <div class="box-text">
+                <div class="box-title">Discord Enmity</div>
+                <div class="box-description">Discord With Modded Features </div>
+            </div>
+            <div class="box-link">&gt;</div>
+        </a>
+      
+        <!-- Box 7 - Undertale -->
+        <a href="itms-services://?action=download-manifest&url=https://daisuke1227.github.io/Daisuke-s-Revamped/Undertale.plist" class="box-container">
+            <img class="box-image" src="https://cdn.discordapp.com/attachments/1153889879114141806/1154520675088875683/icon.png" alt="Image">
+            <div class="box-text">
+                <div class="box-title">Undertale</div>
+                <div class="box-description">Was never on the AppStore</div>
+            </div>
+            <div class="box-link">&gt;</div>
+        </a>
+    </div>
+
+    <script>
+        // Fade in the boxes when the page loads
+        window.addEventListener('load', function() {
+            const boxes = document.querySelectorAll('.box-container');
+            boxes.forEach(function(box) {
+                box.style.opacity = '1';
+            });
+        });
+    </script>
+</body>
+</html>
 
 
 <script src='https://cdn.jsdelivr.net/npm/@widgetbot/crate@3' async defer>
@@ -150,3 +325,4 @@
         channel: '1158283726787182622' // #widget
     })
 </script>
+
