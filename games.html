@@ -116,78 +116,132 @@
 </html>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificate Status</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* Custom Button Styles */
-        .custom-button {
-            background-color: #2196F3; /* Button background color */
-            color: white; /* Button text color */
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transitions */
-            font-size: 16px;
-            border: 2px solid transparent; /* Transparent border initially */
-            outline: none;
-            text-decoration: none; /* Remove underlines from links */
+        :root {
+            --box-width: 700px; /* Default box width */
+            --box-height: 250px; /* Default box height */
         }
 
-        /* Button Hover Styles */
-        .custom-button:hover {
-            background-color: #1976D2; /* Button background color on hover */
-            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
-            transform: translateY(-3px); /* Lift the button slightly */
-        }
-
-        .box-container {
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
-            gap: 20px;
-            height: 100vh; /* Set the container height to 100% of the viewport height */
+            min-height: 100vh;
         }
 
-        /* Individual Box Styles */
-        .box {
-            background-color: #7289DA; /* Background color */
-            color: white; /* Text color */
-            padding: 20px;
-            border-radius: 10px; /* Rounded corners */
-            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2); /* Box shadow */
-            transition: transform 0.5s ease, box-shadow 0.2s ease;
+        .status-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px; /* Reduced padding */
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
             text-align: center;
-            width: 250px; /* Adjust the width as needed */
-            text-decoration: none; /* Remove underlines from links */
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out forwards;
+            width: var(--box-width); /* Use CSS variable for width */
+            height: var(--box-height); /* Use CSS variable for height */
         }
 
-        /* Hover Effect for Boxes */
-        .box:hover {
-            transform: translateY(-10px);
-            box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.3);
+        .status-box h2 {
+            font-size: 18px; /* Reduced font size */
+            color: #333;
+            margin-bottom: 5px; /* Reduced margin */
+        }
+
+        .status-text {
+            font-size: 14px; /* Reduced font size */
+            color: #555;
+            line-height: 1.2; /* Reduced line height */
+            margin-bottom: 5px; /* Reduced margin */
+        }
+
+        .status-image {
+            width: 80px; /* Reduced image size */
+            height: auto;
+            margin-bottom: 5px; /* Reduced margin */
+            border-radius: 20%; /* Added border radius */
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Header Section -->
-    <header>
-       
-    </header>
+    <div class="status-box">
+        <img src="https://static.appdb.to/images/cydia-1900000916-icon-1655207580.png" alt="Image" class="status-image">
+        <h2>Subway Surfers Modded</h2>
+        <p class="status-text">
+            <h2>Signed And Working<h2>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Download Button</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
 
-    <!-- Main Content Section -->
-    <main>
-      
-        
-        <!-- Box Container -->
-        <div class="box-container">
-            <a href="https://discord.com/oauth2/authorize?client_id=1157144633890054175&scope=applications.commands%20bot&permissions=8" class="box" target="_blank">
-                <h2>Cookie Clicker</h2>
-                <p>Play</p>
-            </a>
-            <!-- Add more boxes here -->
-        </div>
-    </main>
+        .download-button {
+            background-color: #7c02f5;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 25px; /* Rounded corners */
+            cursor: pointer;
+            opacity: 0;
+            transition: all 0.3s ease-in-out;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .download-button:hover {
+            transform: scale(1.1);
+        }
+
+        .fade-in {
+            animation: fadeIn 1s forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="https://api.casp.dev/sign/sign-16.php?ipa=SubwaySurfersHack.ipa&name=Subway%20Surfers%20Hack&cert=cert&pass=AppleP12.com" class="download-button fade-in">Download</a>
 </body>
 </html>
+
+        </p>
+    </div>
+</body>
+</html>
+
