@@ -168,15 +168,19 @@
 
         /* Styles for the container */
         .box-container {
-              width: 100%;
-              margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #ff7f50, #000); /* Halloween gradient background (orange and black) */
-            background-size: cover; /* Cover the entire viewport */
-            background-repeat: no-repeat;
-            background-attachment: fixed; /* Fixed background */
-            color: white; /* Text color */
+          width: 100%; /* Full width on mobile devices */
+            max-width: 300px; /* Limit maximum width */
+            background: url('https://cdn.discordapp.com/attachments/1153889879114141806/1154239900930023516/deyc41r-a5463947-264a-431b-a43f-ef4ade621619_1.png'); /* Set your image URL here */
+            background-size: cover;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 15px; /* Increased border radius */
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            margin: 10px; /* Add margin for spacing */
         }
 
         /* Styles for the image */
