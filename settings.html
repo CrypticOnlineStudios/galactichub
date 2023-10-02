@@ -144,6 +144,7 @@
     </script>
 </body>
 </html>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -158,141 +159,101 @@
             padding: 0;
         }
 
-        .settings-container {
-            width: 50%;
-            margin: 50px auto;
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
             padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            border-radius: 10px;
-        }
-
-        .theme-button {
-            display: inline-block;
-            padding: 10px 20px;
-            margin: 5px;
-            border: none;
-            cursor: pointer;
+            background-color: white;
             border-radius: 5px;
-            text-align: center;
-            text-decoration: none;
-            color: #fff;
-            transition: background-color 0.3s ease;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        .theme-button.halloween {
-            background-color: #ff7f50;
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
         }
 
-        .theme-button.majestic {
-            background-color: #800080;
+        .setting {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
         }
 
-        .theme-button.gold {
-            background-color: #ffd700;
-        }
-
-        .open-in-blank-label {
+        .setting label {
             font-weight: bold;
         }
 
-        .checkbox-container {
-            display: flex;
-            align-items: center;
+        .setting input[type="text"] {
+            width: 70%;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
         }
 
-        .checkbox-label {
-            margin-left: 10px;
-        }
-
-        .redirect-button {
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: #fff;
+        .setting button {
+            background-color: #007BFF;
+            color: white;
             border: none;
-            border-radius: 5px;
+            border-radius: 3px;
+            padding: 5px 10px;
             cursor: pointer;
-            transition: background-color 0.3s ease;
         }
 
-        .redirect-button:hover {
+        .setting button:hover {
             background-color: #0056b3;
         }
     </style>
 </head>
 <body>
-    <div class="settings-container">
-        <h2>Custom Themes</h2>
-        <button class="theme-button halloween" onclick="changeTheme('halloween')">Halloween</button>
-        <button class="theme-button majestic" onclick="changeTheme('majestic')">Majestic</button>
-        <button class="theme-button gold" onclick="changeTheme('gold')">Gold</button>
+    <div class="container">
+        <h1>Advanced Settings</h1>
 
-        <h2>Open Links in New Tab</h2>
-        <div class="checkbox-container">
-            <input type="checkbox" id="openInBlankCheckbox">
-            <label class="checkbox-label" for="openInBlankCheckbox">Open in New Tab</label>
+        <!-- Theme Settings -->
+        <div class="setting">
+            <label>Theme:</label>
+            <button id="halloween">Halloween</button>
+            <button id="majestic">Majestic</button>
+            <button id="gold">Gold</button>
         </div>
 
-        <h2>Redirect to <code>about:blank</code></h2>
-        <input type="text" id="redirectUrl" placeholder="Enter URL">
-        <button class="redirect-button" onclick="redirectBlank()">Redirect</button>
+        <!-- Redirect Settings -->
+        <div class="setting">
+            <label>Redirect URL:</label>
+            <input type="text" id="redirectUrl" placeholder="Enter URL">
+            <button id="redirectButton">Redirect</button>
+        </div>
     </div>
 
     <script>
-        // Function to change the theme
-        function changeTheme(theme) {
-            // Define your theme-specific styles here
-            let backgroundColor, textColor;
+        // Theme buttons
+        const halloweenButton = document.getElementById('halloween');
+        const majesticButton = document.getElementById('majestic');
+        const goldButton = document.getElementById('gold');
 
-            switch (theme) {
-                case 'halloween':
-                    backgroundColor = '#ff7f50';
-                    textColor = '#fff';
-                    break;
-                case 'majestic':
-                    backgroundColor = '#800080';
-                    textColor = '#fff';
-                    break;
-                case 'gold':
-                    backgroundColor = '#ffd700';
-                    textColor = '#000';
-                    break;
-                default:
-                    backgroundColor = '#fff';
-                    textColor = '#000';
-            }
+        halloweenButton.addEventListener('click', () => {
+            document.body.style.background = 'linear-gradient(135deg, #ff7f50, #000)';
+        });
 
-            // Apply the theme styles
-            document.body.style.backgroundColor = backgroundColor;
-            document.body.style.color = textColor;
-        }
+        majesticButton.addEventListener('click', () => {
+            document.body.style.background = 'linear-gradient(135deg, #8a2be2, #4a0082)';
+        });
 
-        // Function to open links in a new tab
-        function updateLinkTarget() {
-            const openInBlankCheckbox = document.getElementById('openInBlankCheckbox');
-            const links = document.querySelectorAll('a');
+        goldButton.addEventListener('click', () => {
+            document.body.style.background = 'linear-gradient(135deg, #ffd700, #ffd700)';
+        });
 
-            links.forEach(link => {
-                if (openInBlankCheckbox.checked) {
-                    link.target = '_blank'; // Open links in a new tab
-                } else {
-                    link.removeAttribute('target'); // Remove target attribute
-                }
-            });
-        }
+        // Redirect button
+        const redirectButton = document.getElementById('redirectButton');
+        const redirectUrlInput = document.getElementById('redirectUrl');
 
-        // Function to redirect to about:blank
-        function redirectBlank() {
-            const redirectUrl = document.getElementById('redirectUrl').value;
-            if (redirectUrl) {
-                window.open('about:blank').location.href = redirectUrl;
-            }
-        }
+        redirectButton.addEventListener('click', () => {
+            const redirectUrl = redirectUrlInput.value;
+            window.open(redirectUrl, '_blank');
+        });
     </script>
 </body>
 </html>
-
-
 
 <script src='https://cdn.jsdelivr.net/npm/@widgetbot/crate@3' async defer>
     new Crate({
