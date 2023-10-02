@@ -118,131 +118,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Certificate Status</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --box-width: 700px; /* Default box width */
-            --box-height: 250px; /* Default box height */
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crimson</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
 
-        body {
-            font-family: 'Montserrat', sans-serif;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
+    .header {
+      background-color: #ff4d4d; /* Updated background color */
+      padding: 20px;
+      text-align: center;
+    }
 
-        .status-box {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 10px; /* Reduced padding */
-            border-radius: 10px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-            text-align: center;
-            opacity: 0;
-            animation: fadeIn 1s ease-in-out forwards;
-            width: var(--box-width); /* Use CSS variable for width */
-            height: var(--box-height); /* Use CSS variable for height */
-        }
+    h1 {
+      font-size: 48px;
+      color: white;
+      margin: 0;
+    }
 
-        .status-box h2 {
-            font-size: 18px; /* Reduced font size */
-            color: #333;
-            margin-bottom: 5px; /* Reduced margin */
-        }
+    .logo {
+      max-width: 100px; /* Set a max width for the logo */
+      margin: 20px auto; /* Center the logo horizontally */
+      display: block; /* Remove any extra space below the image */
+    }
 
-        .status-text {
-            font-size: 14px; /* Reduced font size */
-            color: #555;
-            line-height: 1.2; /* Reduced line height */
-            margin-bottom: 5px; /* Reduced margin */
-        }
+    .button {
+      padding: 10px 20px;
+      background-color: #f2f2f2;
+      border: none;
+      color: #454545;
+      font-size: 16px;
+      cursor: pointer;
+      transition: transform 0.3s ease; /* Smooth hover effect */
+    }
 
-        .status-image {
-            width: 80px; /* Reduced image size */
-            height: auto;
-            margin-bottom: 5px; /* Reduced margin */
-            border-radius: 20%; /* Added border radius */
-        }
+    .button:hover {
+      transform: scale(1.1); /* Grow when hovered */
+    }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-    </style>
+    /* Additional styling for the section class */
+    .section {
+      padding: 20px;
+      border: 1px solid #ccc;
+      background-color: #f2f2f2;
+    }
+  </style>
 </head>
 <body>
-    <div class="status-box">
-        <img src="https://static.appdb.to/images/cydia-1900000916-icon-1655207580.png" alt="Image" class="status-image">
-        <h2>Subway Surfers</h2>
-        <h2>Working, Unblocked</h2>
-        <p class="status-text">
-          
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Download Button</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-
-        .download-button {
-            background-color: #7c02f5;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 25px; /* Rounded corners */
-            cursor: pointer;
-            opacity: 0;
-            transition: all 0.3s ease-in-out;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .download-button:hover {
-            transform: scale(1.1);
-        }
-
-        .fade-in {
-            animation: fadeIn 1s forwards;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-    </style>
-</head>
-<body>
-    <a href="https://api.casp.dev/sign/sign-16.php?ipa=SubwaySurfersHack.ipa&name=Subway%20Surfers%20Hack&cert=cert&pass=AppleP12.com" class="download-button fade-in">Play</a>
+  <div class="header">
+    <h1>Crimson</h1>
+    <img src="logo.png" alt="scarlet" class="logo">
+    <a class="button non-transparent svelte-1qoh5hz" href="CRIMSON.mobileconfig" download>Install Crimson</a>
+  </div>
 </body>
 </html>
-
-        </p>
-    </div>
-</body>
-</html>
-
