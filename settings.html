@@ -6,7 +6,6 @@
     <title>Galactic</title>
     <link rel="stylesheet" href="https://usescarlet.com/main.css"/>
     <link rel="stylesheet" href="https://usescarlet.com/internal/immutable/assets/_page-b961c8fc.css"/>
-  
     <link id="favicon" rel="icon" type="image/x-icon" href="favicon.png">
     <style>
         body {
@@ -105,6 +104,47 @@
                 color: white; /* Text color for mobile links */
             }
         }
+
+        /* Add styles for the search bar */
+        .search-container {
+            display: flex;
+            align-items: center;
+            margin-right: 20px; /* Adjust spacing between the search bar and menu icon */
+        }
+
+        .search-container input[type="text"] {
+            border: none;
+            padding: 10px;
+            font-size: 16px;
+            outline: none;
+            background-color: transparent;
+            color: white;
+            border-bottom: 2px solid white;
+            margin-right: 10px;
+            transition: border-color 0.3s ease;
+        }
+
+        .search-container input[type="text"]::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .search-container input[type="text"]:focus {
+            border-color: #ff7f50; /* Highlight border color on focus */
+        }
+
+        .search-container button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 0 25px 25px 0;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .search-container button:hover {
+            background-color: #0056b3;
+        }
     </style>
 </head>
 <body>
@@ -115,8 +155,21 @@
         <a href="games.html" class="active-link">Games</a>
         <a href="proxies.html" class="active-link">Proxies</a>
         <a href="settings.html" class="active-link">Settings</a>
-        <div class="menu-icon" onclick="toggleMenu()">&#9776;</div> 
+        <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+        
+        <!-- Add the search bar container -->
+        <div class="search-container">
+            <input type="text" id="search" placeholder="Search Games">
+            <button id="searchButton">Search</button>
+        </div>
     </div>
+    
+    <!-- Rest of your HTML content -->
+
+    <!-- Your existing scripts, including the toggleMenu function -->
+</body>
+</html>
+
 
     <!-- Content -->
     <div style="margin-top: 80px; padding: 20px;">
