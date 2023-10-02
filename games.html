@@ -1,1 +1,96 @@
 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fading Box</title>
+    <style>
+        /* Center the box both horizontally and vertically */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        /* Styles for the container */
+        .box-container {
+            width: 300px;
+            background-color: #ffffff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 15px; /* Increased border radius */
+            padding: 20px;
+            display: inline-block; /* Removed 'none' to make it initially visible */
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+            cursor: pointer;
+            position: relative; /* Removed 'center' and added 'relative' for button positioning */
+            overflow: hidden; /* Added to hide the button initially */
+            text-align: center; /* Center-align text and button */
+        }
+
+        /* Styles for the image */
+        .box-image {
+            width: 60px;
+            height: 60px;
+            margin-right: 10px;
+            display: inline-block; /* Display the image inline */
+            vertical-align: middle; /* Align image vertically in the middle */
+        }
+
+        /* Styles for the title */
+        .box-title {
+            font-size: 18px;
+            font-weight: bold;
+            display: inline-block; /* Display the title inline */
+            vertical-align: middle; /* Align title vertically in the middle */
+        }
+
+        /* Styles for the description */
+        .box-description {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        /* Styles for the button */
+        .box-button {
+            background-color: #007BFF; /* Button background color */
+            color: #ffffff; /* Button text color */
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out; /* Smooth transition for button background */
+        }
+
+        /* Hover effect for the button */
+        .box-button:hover {
+            background-color: #0056b3; /* Darker background color on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="box-container">
+        <img class="box-image" src="https://cdn.discordapp.com/attachments/1137482366047232163/1158277849845858336/download_6.jpeg?ex=651ba9cf&is=651a584f&hm=3d46b189d92e43abe77d7c5842c74995bd093972dd7285aa25bdd87e092ccc1c&" alt="Image">
+        <div class="box-text">
+            <div class="box-title">Cookie Clicker</div>
+            <div class="box-description">Play Cookie Clicker</div>
+        </div>
+        <button class="box-button" onclick="window.location.href='info app.html'">Play</button>
+    </div>
+
+    <script>
+        // Fade in the box when the page loads
+        window.addEventListener('load', function() {
+            const box = document.querySelector('.box-container');
+            box.style.opacity = '1';
+        });
+    </script>
+</body>
+</html>
+
