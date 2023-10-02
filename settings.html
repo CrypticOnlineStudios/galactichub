@@ -144,6 +144,128 @@
     </script>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Settings</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .settings-container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+        }
+
+        .theme-button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            text-align: center;
+            text-decoration: none;
+            color: #fff;
+            transition: background-color 0.3s ease;
+        }
+
+        .theme-button.halloween {
+            background-color: #ff7f50;
+        }
+
+        .theme-button.majestic {
+            background-color: #800080;
+        }
+
+        .theme-button.gold {
+            background-color: #ffd700;
+        }
+
+        .open-in-blank-label {
+            font-weight: bold;
+        }
+
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .checkbox-label {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="settings-container">
+        <h2>Custom Themes</h2>
+        <button class="theme-button halloween" onclick="changeTheme('halloween')">Halloween</button>
+        <button class="theme-button majestic" onclick="changeTheme('majestic')">Majestic</button>
+        <button class="theme-button gold" onclick="changeTheme('gold')">Gold</button>
+
+        <h2>Open Links in New Tab</h2>
+        <div class="checkbox-container">
+            <input type="checkbox" id="openInBlankCheckbox" onchange="updateLinkTarget()">
+            <label class="checkbox-label" for="openInBlankCheckbox">Open in New Tab</label>
+        </div>
+    </div>
+
+    <script>
+        // Function to change the theme
+        function changeTheme(theme) {
+            // Define your theme-specific styles here
+            let backgroundColor, textColor;
+
+            switch (theme) {
+                case 'halloween':
+                    backgroundColor = '#ff7f50';
+                    textColor = '#fff';
+                    break;
+                case 'majestic':
+                    backgroundColor = '#800080';
+                    textColor = '#fff';
+                    break;
+                case 'gold':
+                    backgroundColor = '#ffd700';
+                    textColor = '#000';
+                    break;
+                default:
+                    backgroundColor = '#fff';
+                    textColor = '#000';
+            }
+
+            // Apply the theme styles
+            document.body.style.backgroundColor = backgroundColor;
+            document.body.style.color = textColor;
+        }
+
+        // Function to update link target based on checkbox
+        function updateLinkTarget() {
+            const openInBlankCheckbox = document.getElementById('openInBlankCheckbox');
+            const links = document.querySelectorAll('a');
+
+            links.forEach(link => {
+                if (openInBlankCheckbox.checked) {
+                    link.target = '_blank'; // Open links in a new tab
+                } else {
+                    link.removeAttribute('target'); // Remove target attribute
+                }
+            });
+        }
+    </script>
+</body>
+</html>
+
 
 
 <script src='https://cdn.jsdelivr.net/npm/@widgetbot/crate@3' async defer>
