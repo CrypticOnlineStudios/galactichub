@@ -197,7 +197,6 @@
     </script>
 </body>
 </html>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -286,15 +285,30 @@
 
         halloweenButton.addEventListener('click', () => {
             document.body.style.background = 'linear-gradient(135deg, #ff7f50, #000)';
+            localStorage.setItem('theme', 'halloween');
         });
 
         majesticButton.addEventListener('click', () => {
             document.body.style.background = 'linear-gradient(135deg, #8a2be2, #4a0082)';
+            localStorage.setItem('theme', 'majestic');
         });
 
         goldButton.addEventListener('click', () => {
             document.body.style.background = 'linear-gradient(135deg, #ffd700, #ffd700)';
+            localStorage.setItem('theme', 'gold');
         });
+
+        // Check and apply saved theme
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            if (savedTheme === 'halloween') {
+                halloweenButton.click();
+            } else if (savedTheme === 'majestic') {
+                majesticButton.click();
+            } else if (savedTheme === 'gold') {
+                goldButton.click();
+            }
+        }
 
         // Redirect button
         const redirectButton = document.getElementById('redirectButton');
@@ -307,6 +321,7 @@
     </script>
 </body>
 </html>
+
 
 <script src='https://cdn.jsdelivr.net/npm/@widgetbot/crate@3' async defer>
     new Crate({
