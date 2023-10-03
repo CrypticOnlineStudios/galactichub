@@ -20,24 +20,19 @@
             color: white; /* Text color */
         }
 
-        /* Create a fixed navbar with advanced styling */
+        /* Create a modern and smooth navbar */
         .navbar {
-            background-color: rgba(0, 0, 0, 0.3); /* Add a transparent background to the navbar */
+            background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 1000;
             transition: background-color 0.3s ease, box-shadow 0.3s ease;
-            padding: 10px 0;
+            padding: 15px 0;
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
             align-items: center;
-        }
-
-        /* Add a subtle shadow on scroll */
-        .navbar.scroll {
-            background-color: rgba(0, 0, 0, 0.7); /* Adjust the background opacity on scroll */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
         }
 
         /* Style the navbar links with smooth transitions */
@@ -48,6 +43,7 @@
             position: relative;
             color: white; /* Text color for the links */
             transition: color 0.3s ease; /* Smooth text color transition */
+            padding: 5px 10px; /* Add some padding for better clickability */
         }
 
         /* Navbar links on hover */
@@ -63,7 +59,7 @@
             height: 3px;
             background-color: #ff7f50; /* Highlight color for the active link */
             position: absolute;
-            bottom: -5px; /* Improved positioning for the line */
+            bottom: 0;
             left: 0;
             transform: scaleX(0);
             transform-origin: center;
@@ -84,25 +80,19 @@
 
         @media screen and (max-width: 768px) {
             .navbar {
-                justify-content: space-between;
+                flex-direction: column;
+                align-items: center;
+                background-color: rgba(0, 0, 0, 0.9); /* Adjust the background opacity for mobile menu */
+                padding: 20px 0; /* Increased padding for mobile menu */
+            }
+
+            .navbar a {
+                margin: 10px 0;
+                font-size: 18px;
             }
 
             .menu-icon {
                 display: block;
-            }
-
-            .navbar.responsive {
-                flex-direction: column;
-                align-items: flex-start;
-                background-color: rgba(0, 0, 0, 0.7); /* Adjust the background opacity for mobile menu */
-                padding: 20px 0; /* Increased padding for mobile menu */
-            }
-
-            .navbar.responsive a {
-                display: block;
-                margin: 10px 20px;
-                font-size: 18px;
-                color: white; /* Text color for mobile links */
             }
         }
     </style>
@@ -110,13 +100,27 @@
 <body>
     <!-- Navbar -->
     <div class="navbar" id="navbar">
-        <a href="index.html" class="active-link">Home</a>
-        <a href="changelog.html" class="active-link">Changelogs</a>
-        <a href="games.html" class="active-link">Games</a>
-        <a href="proxies.html" class="active-link">Proxies</a>
-        <a href="settings.html" class="active-link">Settings</a>
-        <div class="menu-icon" onclick="toggleMenu()">&#9776;</div> 
+        <div>
+            <a href="index.html" class="active-link">Home</a>
+            <a href="changelog.html" class="active-link">Changelogs</a>
+            <a href="games.html" class="active-link">Games</a>
+            <a href="proxies.html" class="active-link">Proxies</a>
+            <a href="settings.html" class="active-link">Settings</a>
+        </div>
+        <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
     </div>
+    
+    <!-- Your content goes here -->
+
+    <script>
+        // Function to toggle the responsive menu
+        function toggleMenu() {
+            const navbar = document.getElementById("navbar");
+            navbar.classList.toggle("responsive");
+        }
+    </script>
+</body>
+</html>
 
     <!-- Content -->
     <div style="margin-top: 80px; padding: 20px;">
