@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loading Screen</title>
+    <title>Galactic</title>
     <style>
         body {
             margin: 0;
@@ -17,8 +17,16 @@
             overflow: hidden; /* Prevent scrollbars */
         }
 
+        .loading-container {
+            text-align: center;
+            background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        }
+
         .loading-text {
-            font-size: 24px;
+            font-size: 36px;
             color: #fff;
             animation: fadeOut 2s ease-in-out forwards; /* Fade out animation */
         }
@@ -30,7 +38,9 @@
     </style>
 </head>
 <body>
-    <div class="loading-text">Welcome to Galactic</div>
+    <div class="loading-container">
+        <div class="loading-text">Welcome to Galactic</div>
+    </div>
 </body>
 </html>
 
