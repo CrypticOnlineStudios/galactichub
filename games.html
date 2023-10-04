@@ -115,13 +115,22 @@
             background-repeat: no-repeat;
             text-align: center;
             padding: 40px 0;
-            opacity: 0; /* Initial opacity set to 0 */
-            transition: opacity 2s ease-in-out; /* Smooth fade-in transition */
+            animation: fadein 2s ease-in-out; /* CSS animation for fade-in */
         }
 
         /* Show the favicon when the sidebar is active */
         .sidebar.active .sidebar-icon {
-            opacity: 1;
+            animation: none; /* Disable the animation when the sidebar is already active */
+        }
+
+        /* CSS animation keyframes for fade-in */
+        @keyframes fadein {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
         }
     </style>
 </head>
@@ -171,30 +180,31 @@
 
     <!-- Content container -->
 
-   <script>
-    const sidebar = document.getElementById("sidebar");
-    const toggleButton = document.getElementById("toggle-button");
-    const overlay = document.getElementById("overlay");
-    const contentContainer = document.getElementById("content-container");
+    <script>
+        const sidebar = document.getElementById("sidebar");
+        const toggleButton = document.getElementById("toggle-button");
+        const overlay = document.getElementById("overlay");
+        const contentContainer = document.getElementById("content-container");
 
-    // Function to toggle the sidebar
-    function toggleSidebar() {
-        sidebar.classList.toggle("active");
-        toggleButton.classList.toggle("active");
-        overlay.style.display = sidebar.classList.contains("active") ? "block" : "none";
-        contentContainer.classList.toggle("active");
-    }
+        // Function to toggle the sidebar
+        function toggleSidebar() {
+            sidebar.classList.toggle("active");
+            toggleButton.classList.toggle("active");
+            overlay.style.display = sidebar.classList.contains("active") ? "block" : "none";
+            contentContainer.classList.toggle("active");
+        }
 
-    // Check if the sidebar is active on page load
-    if (localStorage.getItem("sidebarActive") === "true") {
-        toggleSidebar(); // Toggle sidebar if it was active
-    }
+        // Check if the sidebar is active on page load
+        if (localStorage.getItem("sidebarActive") === "true") {
+            toggleSidebar(); // Toggle sidebar if it was active
+        }
 
-    // Add click event listener to the toggle button
-    toggleButton.addEventListener("click", toggleSidebar);
-</script>
+        // Add click event listener to the toggle button
+        toggleButton.addEventListener("click", toggleSidebar);
+    </script>
 </body>
 </html>
+
 
 <!DOCTYPE html>
 <html lang="en">
