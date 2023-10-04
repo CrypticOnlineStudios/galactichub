@@ -3,33 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Page Title</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(to right, red, blue); /* Gradient background */
-        }
-
-        /* Your other CSS styles can go here */
-
-    </style>
-</head>
-<body>
-    <!-- Your HTML content goes here -->
-
-    <!-- Example content -->
-  
-</body>
-</html>
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galactic</title>
     <style>
         /* Sidebar Styles */
@@ -88,9 +61,11 @@
             padding: 10px 15px;
         }
 
+        /* Smooth hover effect for sidebar links */
         .sidebar ul li a:hover {
             background-color: #555;
-            transform: scale(1.1); /* Zoom effect on hover */
+            transform: scale(1.05); /* Slightly increase the size on hover */
+            transition: transform 0.2s; /* Smooth transition */
         }
 
         /* Toggle button */
@@ -132,16 +107,22 @@
             margin-left: 250px;
         }
 
-  /* Sidebar icon */
-.sidebar-icon {
-    background-image: url('favicon.png'); /* Replace with your custom image path */
-    background-size: 75px 75px; /* Set the desired size */
-    background-position: center;
-    background-repeat: no-repeat;
-    text-align: center;
-    padding: 40px 0;
-}
+        /* Sidebar icon */
+        .sidebar-icon {
+            background-image: url('favicon.png'); /* Replace with your custom image path */
+            background-size: 75px 75px; /* Set the desired size */
+            background-position: center;
+            background-repeat: no-repeat;
+            text-align: center;
+            padding: 40px 0;
+            opacity: 0; /* Initial opacity set to 0 */
+            transition: opacity 0.5s ease-in-out; /* Smooth fade-in transition */
+        }
 
+        /* Show the favicon when the sidebar is active */
+        .sidebar.active .sidebar-icon {
+            opacity: 1;
+        }
     </style>
 </head>
 <body>
@@ -178,9 +159,9 @@
                         <img src="proxies.png" alt="Proxies"> Proxies
                     </a>
                 </li>
-                 <li>
+                <li>
                     <a href="settings.html">
-                        <img src="proxies.png" alt="Proxies">Settings
+                        <img src="settings.png" alt="Settings"> Settings
                     </a>
                 </li>
                 <!-- Add more sections/links here -->
