@@ -212,7 +212,6 @@
     </script>
 </body>
 </html>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -232,15 +231,15 @@
 
         /* Container for the boxes */
         .box-container-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 20px;
-}
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
 
         /* Styles for the container */
         .box-container {
-            width: calc(50% - 20px); /* 50% width with spacing in between */
+            width: calc(33.33% - 20px); /* 33.33% width with spacing in between */
             max-width: 300px; /* Limit maximum width */
             background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
@@ -257,6 +256,8 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            transform: scale(1); /* Initial scale */
+            transform-origin: center center;
         }
 
         /* Styles for the title */
@@ -293,6 +294,33 @@
         .box-container:hover {
             background-color: rgba(0, 0, 0, 0.5); /* Background color with opacity */
         }
+
+        /* Fading-in animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Apply fading-in animation to each box */
+        .box-container:nth-child(1) {
+            animation: fadeIn 0.5s ease-in-out 0.1s forwards;
+        }
+
+        .box-container:nth-child(2) {
+            animation: fadeIn 0.5s ease-in-out 0.2s forwards;
+        }
+
+        .box-container:nth-child(3) {
+            animation: fadeIn 0.5s ease-in-out 0.3s forwards;
+        }
+
+        /* Add more animations for other boxes as needed */
     </style>
 </head>
 <body>
@@ -360,19 +388,15 @@
             <div class="box-description">Temple Run 2 Unblocked</div>
             <button class="play-button">Play</button>
         </a>
+
+        <!-- Add more boxes here as needed -->
+
     </div>
 
     <script>
-        // Fade in the boxes when the page loads
-        window.addEventListener('load', function() {
-            const boxes = document.querySelectorAll('.box-container');
-            boxes.forEach(function(box) {
-                box.style.opacity = '1';
-            });
-        });
+        // JavaScript code can be added here if needed
     </script>
 </body>
 </html>
-
 
 
