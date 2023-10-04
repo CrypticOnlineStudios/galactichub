@@ -76,7 +76,7 @@
             cursor: pointer;
             z-index: 2;
             color: #ffffff; /* Grey color */
-            font-size: 32px; /* Bigger size */
+            font-size: 38px; /* Bigger size */
             transition: transform 0.3s;
         }
 
@@ -177,19 +177,19 @@
         const overlay = document.getElementById("overlay");
         const contentContainer = document.getElementById("content-container");
 
-        toggleButton.addEventListener("click", () => {
+        // Function to toggle the sidebar
+        function toggleSidebar() {
             sidebar.classList.toggle("active");
             toggleButton.classList.toggle("active");
             overlay.style.display = sidebar.classList.contains("active") ? "block" : "none";
             contentContainer.classList.toggle("active");
-        });
+        }
 
-        overlay.addEventListener("click", () => {
-            sidebar.classList.remove("active");
-            toggleButton.classList.remove("active");
-            overlay.style.display = "none";
-            contentContainer.classList.remove("active");
-        });
+        // Check if the sidebar is active on page load
+        if (localStorage.getItem("sidebarActive") === "true") {
+            toggleSidebar(); // Toggle sidebar if it was active
+        }
+
     </script>
 </body>
 </html>
