@@ -3,34 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Page Title</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(to right, red, blue); /* Gradient background */
-        }
-
-        /* Your other CSS styles can go here */
-
-    </style>
-</head>
-<body>
-    <!-- Your HTML content goes here -->
-
-    <!-- Example content -->
-    
-</body>
-</html>
-
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galactic</title>
     <style>
         /* Sidebar Styles */
@@ -89,9 +61,11 @@
             padding: 10px 15px;
         }
 
+        /* Smooth hover effect for sidebar links */
         .sidebar ul li a:hover {
             background-color: #555;
-            transform: scale(1.1); /* Zoom effect on hover */
+            transform: scale(1.05); /* Slightly increase the size on hover */
+            transition: transform 0.2s; /* Smooth transition */
         }
 
         /* Toggle button */
@@ -102,7 +76,7 @@
             cursor: pointer;
             z-index: 2;
             color: #ffffff; /* Grey color */
-            font-size: 32px; /* Bigger size */
+            font-size: 38px; /* Bigger size */
             transition: transform 0.3s;
         }
 
@@ -133,16 +107,31 @@
             margin-left: 250px;
         }
 
-  /* Sidebar icon */
-.sidebar-icon {
-    background-image: url('favicon.png'); /* Replace with your custom image path */
-    background-size: 75px 75px; /* Set the desired size */
-    background-position: center;
-    background-repeat: no-repeat;
-    text-align: center;
-    padding: 40px 0;
-}
+        /* Sidebar icon */
+        .sidebar-icon {
+            background-image: url('favicon.png'); /* Replace with your custom image path */
+            background-size: 75px 75px; /* Set the desired size */
+            background-position: center;
+            background-repeat: no-repeat;
+            text-align: center;
+            padding: 40px 0;
+            animation: fadein 2s ease-in-out; /* CSS animation for fade-in */
+        }
 
+        /* Show the favicon when the sidebar is active */
+        .sidebar.active .sidebar-icon {
+            animation: none; /* Disable the animation when the sidebar is already active */
+        }
+
+        /* CSS animation keyframes for fade-in */
+        @keyframes fadein {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
     </style>
 </head>
 <body>
@@ -179,9 +168,9 @@
                         <img src="proxies.png" alt="Proxies"> Proxies
                     </a>
                 </li>
-                 <li>
+                <li>
                     <a href="settings.html">
-                        <img src="proxies.png" alt="Proxies">Settings
+                        <img src="settings.png" alt="Settings"> Settings
                     </a>
                 </li>
                 <!-- Add more sections/links here -->
@@ -197,22 +186,25 @@
         const overlay = document.getElementById("overlay");
         const contentContainer = document.getElementById("content-container");
 
-        toggleButton.addEventListener("click", () => {
+        // Function to toggle the sidebar
+        function toggleSidebar() {
             sidebar.classList.toggle("active");
             toggleButton.classList.toggle("active");
             overlay.style.display = sidebar.classList.contains("active") ? "block" : "none";
             contentContainer.classList.toggle("active");
-        });
+        }
 
-        overlay.addEventListener("click", () => {
-            sidebar.classList.remove("active");
-            toggleButton.classList.remove("active");
-            overlay.style.display = "none";
-            contentContainer.classList.remove("active");
-        });
+        // Check if the sidebar is active on page load
+        if (localStorage.getItem("sidebarActive") === "true") {
+            toggleSidebar(); // Toggle sidebar if it was active
+        }
+
+        // Add click event listener to the toggle button
+        toggleButton.addEventListener("click", toggleSidebar);
     </script>
 </body>
 </html>
+
 
 <!DOCTYPE html>
      <h2>Release Of Galactic Beta!</h2>
