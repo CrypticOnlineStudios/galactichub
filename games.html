@@ -171,26 +171,28 @@
 
     <!-- Content container -->
 
-    <script>
-        const sidebar = document.getElementById("sidebar");
-        const toggleButton = document.getElementById("toggle-button");
-        const overlay = document.getElementById("overlay");
-        const contentContainer = document.getElementById("content-container");
+   <script>
+    const sidebar = document.getElementById("sidebar");
+    const toggleButton = document.getElementById("toggle-button");
+    const overlay = document.getElementById("overlay");
+    const contentContainer = document.getElementById("content-container");
 
-        // Function to toggle the sidebar
-        function toggleSidebar() {
-            sidebar.classList.toggle("active");
-            toggleButton.classList.toggle("active");
-            overlay.style.display = sidebar.classList.contains("active") ? "block" : "none";
-            contentContainer.classList.toggle("active");
-        }
+    // Function to toggle the sidebar
+    function toggleSidebar() {
+        sidebar.classList.toggle("active");
+        toggleButton.classList.toggle("active");
+        overlay.style.display = sidebar.classList.contains("active") ? "block" : "none";
+        contentContainer.classList.toggle("active");
+    }
 
-        // Check if the sidebar is active on page load
-        if (localStorage.getItem("sidebarActive") === "true") {
-            toggleSidebar(); // Toggle sidebar if it was active
-        }
+    // Check if the sidebar is active on page load
+    if (localStorage.getItem("sidebarActive") === "true") {
+        toggleSidebar(); // Toggle sidebar if it was active
+    }
 
-    </script>
+    // Add click event listener to the toggle button
+    toggleButton.addEventListener("click", toggleSidebar);
+</script>
 </body>
 </html>
 
