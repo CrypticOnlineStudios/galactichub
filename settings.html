@@ -252,7 +252,6 @@
 </body>
 </html>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -317,14 +316,6 @@
     <div class="container">
         <h1>Advanced Settings</h1>
 
-        <!-- Theme Settings -->
-        <div class="setting">
-            <label>Theme:</label>
-            <button id="halloween">Halloween</button>
-            <button id="majestic">Majestic</button>
-            <button id="gold">Gold</button>
-        </div>
-
         <!-- Redirect Settings -->
         <div class="setting">
             <label>Redirect URL:</label>
@@ -334,51 +325,16 @@
     </div>
 
     <script>
-       // Theme buttons
-const halloweenButton = document.getElementById('halloween');
-const majesticButton = document.getElementById('majestic');
-const goldButton = document.getElementById('gold');
+        // Redirect button
+        const redirectButton = document.getElementById('redirectButton');
+        const redirectUrlInput = document.getElementById('redirectUrl');
 
-halloweenButton.addEventListener('click', () => {
-    document.body.style.background = 'linear-gradient(135deg, #ff7f50, #000)';
-    localStorage.setItem('theme', 'halloween');
-});
-
-majesticButton.addEventListener('click', () => {
-    document.body.style.background = 'linear-gradient(135deg, #8a2be2, #4a0082)';
-    localStorage.setItem('theme', 'majestic');
-});
-
-goldButton.addEventListener('click', () => {
-    document.body.style.background = 'linear-gradient(135deg, #ffd700, #ffd700)';
-    localStorage.setItem('theme', 'gold');
-});
-
-// Check and apply saved theme
-const savedTheme = localStorage.getItem('theme');
-if (savedTheme) {
-    if (savedTheme === 'halloween') {
-        halloweenButton.click();
-    } else if (savedTheme === 'majestic') {
-        majesticButton.click();
-    } else if (savedTheme === 'gold') {
-        goldButton.click();
-    }
-}
-
-// Redirect button
-const redirectButton = document.getElementById('redirectButton');
-const redirectUrlInput = document.getElementById('redirectUrl');
-
-redirectButton.addEventListener('click', () => {
-    const redirectUrl = redirectUrlInput.value;
-    window.open(redirectUrl, '_blank');
-});
+        redirectButton.addEventListener('click', () => {
+            const redirectUrl = redirectUrlInput.value;
+            const newTab = window.open('about:blank', '_blank');
+            newTab.location.href = redirectUrl;
+        });
 
     </script>
 </body>
 </html>
-
-
-
-
