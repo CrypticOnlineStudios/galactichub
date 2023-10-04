@@ -212,6 +212,7 @@
     </script>
 </body>
 </html>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -308,16 +309,12 @@
         }
 
         /* Apply fading-in animation to each box */
-        .box-container:nth-child(1) {
+        .box-container:nth-child(odd) {
             animation: fadeIn 0.5s ease-in-out 0.1s forwards;
         }
 
-        .box-container:nth-child(2) {
+        .box-container:nth-child(even) {
             animation: fadeIn 0.5s ease-in-out 0.2s forwards;
-        }
-
-        .box-container:nth-child(3) {
-            animation: fadeIn 0.5s ease-in-out 0.3s forwards;
         }
 
         /* Add more animations for other boxes as needed */
@@ -388,9 +385,6 @@
             <div class="box-description">Temple Run 2 Unblocked</div>
             <button class="play-button">Play</button>
         </a>
-
-        <!-- Add more boxes here as needed -->
-
     </div>
 
     <script>
@@ -398,5 +392,4 @@
     </script>
 </body>
 </html>
-
 
