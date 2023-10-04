@@ -295,92 +295,69 @@
         .box-container:hover {
             background-color: rgba(0, 0, 0, 0.5); /* Background color with opacity */
         }
-
-        /* Fading-in animation */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: scale(0.8);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        /* Apply fading-in animation to each box */
-        .box-container:nth-child(odd) {
-            animation: fadeIn 0.5s ease-in-out 0.1s forwards;
-        }
-
-        .box-container:nth-child(even) {
-            animation: fadeIn 0.5s ease-in-out 0.2s forwards;
-        }
-
-        /* Add more animations for other boxes as needed */
     </style>
 </head>
 <body>
     <!-- Container for the boxes -->
     <div class="box-container-wrapper">
         <!-- Box 1 - Among Us -->
-        <a href="https://galactic-mu.vercel.app/gfiles/among-us/" class="box-container">
+        <a href="https://galactic-mu.vercel.app/gfiles/among-us/" class="box-container" id="box1">
             <div class="box-title">Among Us</div>
             <div class="box-description">Among Us Unblocked</div>
             <button class="play-button">Play</button>
         </a>
         
         <!-- Box 2 - Minecraft -->
-        <a href="https://galactic-mu.vercel.app/gfiles/eaglercraft/" class="box-container">
+        <a href="https://galactic-mu.vercel.app/gfiles/eaglercraft/" class="box-container" id="box2">
             <div class="box-title">Minecraft</div>
             <div class="box-description">Minecraft Unblocked</div>
             <button class="play-button">Play</button>
         </a>
 
         <!-- Box 3 - Retrobowl -->
-        <a href="https://galactic-mu.vercel.app/gfiles/retro-bowl/" class="box-container">
+        <a href="https://galactic-mu.vercel.app/gfiles/retro-bowl/" class="box-container" id="box3">
             <div class="box-title">Retrobowl</div>
             <div class="box-description">Retrobowl Unblocked</div>
             <button class="play-button">Play</button>
         </a>
 
         <!-- Box 4 - Cookie Clicker -->
-        <a href="https://galactic-mu.vercel.app/gfiles/cookieclicker/" class="box-container">
+        <a href="https://galactic-mu.vercel.app/gfiles/cookieclicker/" class="box-container" id="box4">
             <div class="box-title">Cookie Clicker</div>
             <div class="box-description">Cookie Clicker Unblocked</div>
             <button class="play-button">Play</button>
         </a>
 
         <!-- Box 5 - Moto X3M -->
-        <a href="https://galactic-mu.vercel.app/gfiles/motox3m/" class="box-container">
+        <a href="https://galactic-mu.vercel.app/gfiles/motox3m/" class="box-container" id="box5">
             <div class="box-title">Moto X3M</div>
             <div class="box-description">Moto X3M Unblocked</div>
             <button class="play-button">Play</button>
         </a>
         
         <!-- Box 6 - Slope -->
-        <a href="https://galactic-mu.vercel.app/gfiles/slope/" class="box-container">
+        <a href="https://galactic-mu.vercel.app/gfiles/slope/" class="box-container" id="box6">
             <div class="box-title">Slope</div>
             <div class="box-description">Slope Unblocked</div>
             <button class="play-button">Play</button>
         </a>
       
         <!-- Box 7 - Subway Surfers -->
-        <a href="https://galactic-mu.vercel.app/gfiles/subway-surfers/" class="box-container">
+        <a href="https://galactic-mu.vercel.app/gfiles/subway-surfers/" class="box-container" id="box7">
             <div class="box-title">Subway Surfers</div>
             <div class="box-description">Subway Surfers Unblocked</div>
             <button class="play-button">Play</button>
         </a>
         
         <!-- Box 8 - Madalin Stunt Cars 2 -->
-        <a href="https://galactic-mu.vercel.app/gfiles/madalin-cars-2/" class="box-container">
+        <a href="https://galactic-mu.vercel.app/gfiles/madalin-cars-2/" class="box-container" id="box8">
             <div class="box-title">Madalin Stunt Cars 2</div>
             <div class="box-description">Madalin Stunt Cars 2 Unblocked</div>
             <button class="play-button">Play</button>
         </a>
         
         <!-- Box 9 - Temple Run 2 -->
-        <a href="https://galactic-mu.vercel.app/gfiles/temple-run-2/" class="box-container">
+        <a href="https://galactic-mu.vercel.app/gfiles/temple-run-2/" class="box-container" id="box9">
             <div class="box-title">Temple Run 2</div>
             <div class="box-description">Temple Run 2 Unblocked</div>
             <button class="play-button">Play</button>
@@ -388,7 +365,22 @@
     </div>
 
     <script>
-        // JavaScript code can be added here if needed
+        // JavaScript to control box animations
+        const boxes = document.querySelectorAll('.box-container');
+
+        function fadeInBox(index) {
+            if (index < boxes.length) {
+                boxes[index].style.opacity = '1';
+                setTimeout(() => {
+                    fadeInBox(index + 1);
+                }, 300); // Adjust the delay between box appearances (in milliseconds)
+            }
+        }
+
+        // Trigger the animation when the page loads
+        window.addEventListener('load', function() {
+            fadeInBox(0);
+        });
     </script>
 </body>
 </html>
