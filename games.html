@@ -212,6 +212,194 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galactic</title>
+    <style>
+        /* Sidebar Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0; /* Gray background */
+            overflow: hidden;
+        }
+
+        .sidebar {
+            height: 100%;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: -250px;
+            background-color: #333;
+            color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            transition: left 0.3s;
+            overflow-y: auto;
+            z-index: 1;
+        }
+
+        .sidebar.active {
+            left: 0;
+        }
+
+        .sidebar-content {
+            padding: 20px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            margin-bottom: 10px;
+            transition: transform 0.2s; /* Animation on hover */
+            display: flex; /* Display items in a row */
+            align-items: center; /* Center items vertically */
+        }
+
+        .sidebar ul li img {
+            width: 24px; /* Adjust the image size */
+            height: 24px;
+            margin-right: 10px; /* Add some spacing between image and text */
+        }
+
+        .sidebar ul li a {
+            text-decoration: none;
+            color: #fff;
+            display: block;
+            padding: 10px 15px;
+        }
+
+        .sidebar ul li a:hover {
+            background-color: #555;
+            transform: scale(1.1); /* Zoom effect on hover */
+        }
+
+        /* Toggle button */
+        .toggle-button {
+            position: absolute;
+            top: 20px;
+            left: 10px;
+            cursor: pointer;
+            z-index: 2;
+            color: #ffffff; /* Grey color */
+            font-size: 32px; /* Bigger size */
+            transition: transform 0.3s;
+        }
+
+        .toggle-button.active {
+            transform: rotate(180deg);
+        }
+
+        /* Overlay */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: none;
+            z-index: 1;
+        }
+
+        /* Content container */
+        .content-container {
+            margin-left: 0;
+            padding: 20px;
+            transition: margin-left 0.3s;
+        }
+
+        .content-container.active {
+            margin-left: 250px;
+        }
+
+  /* Sidebar icon */
+.sidebar-icon {
+    background-image: url('favicon.png'); /* Replace with your custom image path */
+    background-size: 50px 50px; /* Set the desired size */
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    padding: 40px 0;
+}
+
+    </style>
+</head>
+<body>
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Toggle button for sidebar -->
+    <div class="toggle-button" id="toggle-button">&#8801;</div>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-content">
+            <div class="sidebar-icon"></div>
+            <ul>
+                <!-- Add your sidebar links here -->
+                <li class="sidebar-heading">Sections</li>
+                <li>
+                    <a href="index.html">
+                        <img src="home.png" alt="Home"> Home
+                    </a>
+                </li>
+                <li>
+                    <a href="changelog.html">
+                        <img src="updates.png" alt="Updates"> Updates
+                    </a>
+                </li>
+                <li>
+                    <a href="games.html">
+                        <img src="games.png" alt="Games"> Games
+                    </a>
+                </li>
+                <li>
+                    <a href="proxies.html">
+                        <img src="proxies.png" alt="Proxies"> Proxies
+                    </a>
+                </li>
+                 <li>
+                    <a href="settings.html">
+                        <img src="proxies.png" alt="Proxies">Settings
+                    </a>
+                </li>
+                <!-- Add more sections/links here -->
+            </ul>
+        </div>
+    </div>
+
+    <!-- Content container -->
+
+    <script>
+        const sidebar = document.getElementById("sidebar");
+        const toggleButton = document.getElementById("toggle-button");
+        const overlay = document.getElementById("overlay");
+        const contentContainer = document.getElementById("content-container");
+
+        toggleButton.addEventListener("click", () => {
+            sidebar.classList.toggle("active");
+            toggleButton.classList.toggle("active");
+            overlay.style.display = sidebar.classList.contains("active") ? "block" : "none";
+            contentContainer.classList.toggle("active");
+        });
+
+        overlay.addEventListener("click", () => {
+            sidebar.classList.remove("active");
+            toggleButton.classList.remove("active");
+            overlay.style.display = "none";
+            contentContainer.classList.remove("active");
+        });
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fading Box</title>
     <style>
         /* Center the box both horizontally and vertically */
