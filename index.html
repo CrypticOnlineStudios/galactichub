@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -58,8 +57,16 @@
         .sidebar ul li a {
             text-decoration: none;
             color: #fff;
-            display: block;
+            display: flex; /* Display items in a row */
+            align-items: center; /* Center items vertically */
             padding: 10px 15px;
+        }
+
+        .sidebar ul li a .equals {
+            width: 20px;
+            height: 2px;
+            background-color: #ccc;
+            margin-right: 10px;
         }
 
         .sidebar ul li a:hover {
@@ -106,16 +113,15 @@
             margin-left: 250px;
         }
 
-  /* Sidebar icon */
-.sidebar-icon {
-    background-image: url('favicon.png'); /* Replace with your custom image path */
-    background-size: 50px 50px; /* Set the desired size */
-    background-position: center;
-    background-repeat: no-repeat;
-    text-align: center;
-    padding: 40px 0;
-}
-
+        /* Sidebar icon */
+        .sidebar-icon {
+            background-image: url('favicon.png'); /* Replace with your custom image path */
+            background-size: 50px 50px; /* Set the desired size */
+            background-position: center;
+            background-repeat: no-repeat;
+            text-align: center;
+            padding: 40px 0;
+        }
     </style>
 </head>
 <body>
@@ -134,27 +140,32 @@
                 <li class="sidebar-heading">Sections</li>
                 <li>
                     <a href="index.html">
-                        <img src="home.png" alt="Home"> Home
+                        <div class="equals"></div>
+                        <span>Home</span>
                     </a>
                 </li>
                 <li>
                     <a href="changelog.html">
-                        <img src="updates.png" alt="Updates"> Updates
+                        <div class="equals"></div>
+                        <span>Updates</span>
                     </a>
                 </li>
                 <li>
                     <a href="games.html">
-                        <img src="games.png" alt="Games"> Games
+                        <div class="equals"></div>
+                        <span>Games</span>
                     </a>
                 </li>
                 <li>
                     <a href="proxies.html">
-                        <img src="proxies.png" alt="Proxies"> Proxies
+                        <div class="equals"></div>
+                        <span>Proxies</span>
                     </a>
                 </li>
-                 <li>
+                <li>
                     <a href="settings.html">
-                        <img src="proxies.png" alt="Proxies">Settings
+                        <div class="equals"></div>
+                        <span>Settings</span>
                     </a>
                 </li>
                 <!-- Add more sections/links here -->
