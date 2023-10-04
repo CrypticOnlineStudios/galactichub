@@ -5,33 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galactic</title>
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(to right, red, blue); /* Gradient background */
-        }
-
-        /* Your other CSS styles can go here */
-
-    </style>
-</head>
-<body>
-    <!-- Your HTML content goes here -->
-
-    <!-- Example content -->
-   
-</body>
-</html>
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galactic</title>
-    <style>
         /* Sidebar Styles */
         body {
             margin: 0;
@@ -84,29 +57,15 @@
         .sidebar ul li a {
             text-decoration: none;
             color: #fff;
-            display: flex; /* Display items in a row */
-            align-items: center; /* Center items vertically */
+            display: block;
             padding: 10px 15px;
         }
 
-        .sidebar ul li a .equals-container {
-            width: 24px;
-            height: 24px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-right: 10px;
-        }
-
-        .sidebar ul li a .equals {
-            width: 80%; /* Adjust the width of the gray line */
-            height: 2px;
-            background-color: #ccc;
-        }
-
+        /* Smooth hover effect for sidebar links */
         .sidebar ul li a:hover {
             background-color: #555;
-            transform: scale(1.1); /* Zoom effect on hover */
+            transform: scale(1.05); /* Slightly increase the size on hover */
+            transition: transform 0.2s; /* Smooth transition */
         }
 
         /* Toggle button */
@@ -117,7 +76,7 @@
             cursor: pointer;
             z-index: 2;
             color: #ffffff; /* Grey color */
-            font-size: 32px; /* Bigger size */
+            font-size: 38px; /* Bigger size */
             transition: transform 0.3s;
         }
 
@@ -156,6 +115,22 @@
             background-repeat: no-repeat;
             text-align: center;
             padding: 40px 0;
+            animation: fadein 2s ease-in-out; /* CSS animation for fade-in */
+        }
+
+        /* Show the favicon when the sidebar is active */
+        .sidebar.active .sidebar-icon {
+            animation: none; /* Disable the animation when the sidebar is already active */
+        }
+
+        /* CSS animation keyframes for fade-in */
+        @keyframes fadein {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
         }
     </style>
 </head>
@@ -175,42 +150,27 @@
                 <li class="sidebar-heading">Sections</li>
                 <li>
                     <a href="index.html">
-                        <div class="equals-container">
-                            <div class="equals"></div>
-                        </div>
-                        <span>Home</span>
+                        <img src="home.png" alt="Home"> Home
                     </a>
                 </li>
                 <li>
                     <a href="changelog.html">
-                        <div class="equals-container">
-                            <div class="equals"></div>
-                        </div>
-                        <span>Updates</span>
+                        <img src="updates.png" alt="Updates"> Updates
                     </a>
                 </li>
                 <li>
                     <a href="games.html">
-                        <div class="equals-container">
-                            <div class="equals"></div>
-                        </div>
-                        <span>Games</span>
+                        <img src="games.png" alt="Games"> Games
                     </a>
                 </li>
                 <li>
                     <a href="proxies.html">
-                        <div class="equals-container">
-                            <div class="equals"></div>
-                        </div>
-                        <span>Proxies</span>
+                        <img src="proxies.png" alt="Proxies"> Proxies
                     </a>
                 </li>
                 <li>
                     <a href="settings.html">
-                        <div class="equals-container">
-                            <div class="equals"></div>
-                        </div>
-                        <span>Settings</span>
+                        <img src="settings.png" alt="Settings"> Settings
                     </a>
                 </li>
                 <!-- Add more sections/links here -->
@@ -226,20 +186,23 @@
         const overlay = document.getElementById("overlay");
         const contentContainer = document.getElementById("content-container");
 
-        toggleButton.addEventListener("click", () => {
+        // Function to toggle the sidebar
+        function toggleSidebar() {
             sidebar.classList.toggle("active");
             toggleButton.classList.toggle("active");
             overlay.style.display = sidebar.classList.contains("active") ? "block" : "none";
             contentContainer.classList.toggle("active");
-        });
+        }
 
-        overlay.addEventListener("click", () => {
-            sidebar.classList.remove("active");
-            toggleButton.classList.remove("active");
-            overlay.style.display = "none";
-            contentContainer.classList.remove("active");
-        });
+        // Check if the sidebar is active on page load
+        if (localStorage.getItem("sidebarActive") === "true") {
+            toggleSidebar(); // Toggle sidebar if it was active
+        }
+
+        // Add click event listener to the toggle button
+        toggleButton.addEventListener("click", toggleSidebar);
     </script>
 </body>
 </html>
+
 <h2>hi saggychicken45 at</h2>
