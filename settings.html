@@ -212,97 +212,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Advanced Settings</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: linear-gradient(to right, #ff0000, #0000ff);
-            margin: 0;
-            padding: 0;
-        }
-
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: white;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        h1 {
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-
-        .setting {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-
-        .setting label {
-            font-weight: bold;
-        }
-
-        .setting input[type="text"] {
-            width: 70%;
-            padding: 5px;
-            border: 1px solid #ccc;
-            border-radius: 3px;
-        }
-
-        .setting button {
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            border-radius: 3px;
-            padding: 5px 10px;
-            cursor: pointer;
-        }
-
-        .setting button:hover {
-            background-color: #0056b3;
-        }
-
-        /* Tab Cloaker Styles */
-        .tab-cloaker {
-            display: none;
-        }
+        /* Your existing styles */
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Advanced Settings</h1>
 
-        <!-- Redirect Settings -->
+        <!-- Tab Cloaker -->
         <div class="setting">
-            <label>Redirect URL:</label>
-            <input type="text" id="redirectUrl" placeholder="Enter URL">
-            <button id="redirectButton">Redirect</button>
+            <label for="cloaked-url">Enter Cloaked URL:</label>
+            <input type="text" id="cloaked-url" placeholder="Enter cloaked URL">
+            <button id="cloak-button">Cloak</button>
         </div>
 
-        <!-- Tab Cloaker -->
-        <div class="tab-cloaker">
-            <p>This is a cloaked tab. The content of this tab is hidden from view.</p>
+        <!-- Existing Redirect Settings -->
+        <div class="setting">
+            <label for="redirect-url">Redirect URL:</label>
+            <input type="text" id="redirect-url" placeholder="Enter redirect URL">
+            <button id="redirect-button">Redirect</button>
         </div>
     </div>
 
     <script>
-        // Redirect button
-        const redirectButton = document.getElementById('redirectButton');
-        const redirectUrlInput = document.getElementById('redirectUrl');
-        const tabCloaker = document.querySelector('.tab-cloaker');
+        // Cloak button
+        const cloakButton = document.getElementById('cloak-button');
+        const cloakedUrlInput = document.getElementById('cloaked-url');
+
+        cloakButton.addEventListener('click', () => {
+            const cloakedUrl = cloakedUrlInput.value;
+            const newTab = window.open('about:blank', '_blank');
+            newTab.location.href = cloakedUrl;
+        });
+
+        // Redirect button (existing)
+        const redirectButton = document.getElementById('redirect-button');
+        const redirectUrlInput = document.getElementById('redirect-url');
 
         redirectButton.addEventListener('click', () => {
             const redirectUrl = redirectUrlInput.value;
             const newTab = window.open('about:blank', '_blank');
             newTab.location.href = redirectUrl;
-
-            // Show the tab cloaker
-            tabCloaker.style.display = 'block';
         });
-
     </script>
 </body>
 </html>
+
 
