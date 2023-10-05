@@ -288,19 +288,31 @@
         const searchInput = document.getElementById('searchInput');
         const resultsContainer = document.getElementById('results');
 
-        function searchGames(searchTerm) {
-            // Simulate a search for games based on the search term
-            const fakeResults = [
-                'Game 1',
-                'Game 2',
-                'Game 3',
-                'Another Game',
-            ];
+        // Simulated game data
+        const gameData = [
+            'Retro Bowl',
+            'Minecraft',
+            'Among Us',
+            'Cookie Clicker',
+            'Slope',
+            'Subway Surfers',
+            'Madalin Stunt Cars 2',
+            'Temple Run 2',
+        ];
 
-            // Display search results
+        function filterGamesByFirstLetter(searchTerm) {
+            const filteredGames = gameData.filter((game) => {
+                const firstLetter = game.charAt(0).toLowerCase();
+                return firstLetter === searchTerm.toLowerCase();
+            });
+
+            return filteredGames;
+        }
+
+        function displayResults(results) {
             resultsContainer.innerHTML = '';
 
-            fakeResults.forEach((result) => {
+            results.forEach((result) => {
                 const resultItem = document.createElement('div');
                 resultItem.className = 'result-item';
                 resultItem.textContent = result;
@@ -314,11 +326,13 @@
 
         searchInput.addEventListener('input', () => {
             const searchTerm = searchInput.value.trim();
-            searchGames(searchTerm);
+            const filteredResults = filterGamesByFirstLetter(searchTerm);
+            displayResults(filteredResults);
         });
     </script>
 </body>
 </html>
+
 
 
 
