@@ -10,7 +10,7 @@
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
-            background-color: #f0f0f0; /* Gray background */
+            background-color: #ffffff; /* white background */
             overflow: hidden;
         }
 
@@ -49,15 +49,16 @@
         }
 
         .sidebar ul li img {
-            width: 24px; /* Adjust the image size */
-            height: 24px;
+            width: 36px; /* Increase the image size */
+            height: 36px;
             margin-right: 10px; /* Add some spacing between image and text */
         }
 
         .sidebar ul li a {
             text-decoration: none;
             color: #fff;
-            display: block;
+            display: flex; /* Display items in a row */
+            align-items: center; /* Center items vertically */
             padding: 10px 15px;
         }
 
@@ -132,6 +133,11 @@
                 opacity: 1;
             }
         }
+         /* CSS for image rotation on hover */
+        .rotate-on-hover:hover img {
+            transform: rotate(180deg);
+            transition: transform 0.3s; /* Add a smooth transition effect */
+        }
     </style>
 </head>
 <body>
@@ -155,22 +161,22 @@
                 </li>
                 <li>
                     <a href="changelog.html">
-                        <img src="updates.png" alt="Updates"> Updates
+                        <img src="5278663.png" alt="Updates"> Updates
                     </a>
                 </li>
                 <li>
                     <a href="games.html">
-                        <img src="games.png" alt="Games"> Games
+                        <img src="pngtree-game-control-line-icon-vector-png-image_1904129-removebg-preview.png" alt="Games"> Games
                     </a>
                 </li>
                 <li>
                     <a href="proxies.html">
-                        <img src="proxies.png" alt="Proxies"> Proxies
+                        <img src="3771343.png" alt="Proxies"> Proxies
                     </a>
                 </li>
                 <li>
                     <a href="settings.html">
-                        <img src="settings.png" alt="Settings"> Settings
+                        <img src="239262 (1).png" alt="Settings"> Settings
                     </a>
                 </li>
                 <!-- Add more sections/links here -->
@@ -204,58 +210,3 @@
     </script>
 </body>
 </html>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Advanced Settings</title>
-    <style>
-        /* Your existing styles */
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>Advanced Settings</h1>
-
-        <!-- Tab Cloaker -->
-        <div class="setting">
-            <label for="cloaked-url">Enter Cloaked URL:</label>
-            <input type="text" id="cloaked-url" placeholder="Enter cloaked URL">
-            <button id="cloak-button">Cloak</button>
-        </div>
-
-        <!-- Existing Redirect Settings -->
-        <div class="setting">
-            <label for="redirect-url">Redirect URL:</label>
-            <input type="text" id="redirect-url" placeholder="Enter redirect URL">
-            <button id="redirect-button">Redirect</button>
-        </div>
-    </div>
-
-    <script>
-        // Cloak button
-        const cloakButton = document.getElementById('cloak-button');
-        const cloakedUrlInput = document.getElementById('cloaked-url');
-
-        cloakButton.addEventListener('click', () => {
-            const cloakedUrl = cloakedUrlInput.value;
-            const newTab = window.open('about:blank', '_blank');
-            newTab.location.href = cloakedUrl;
-        });
-
-        // Redirect button (existing)
-        const redirectButton = document.getElementById('redirect-button');
-        const redirectUrlInput = document.getElementById('redirect-url');
-
-        redirectButton.addEventListener('click', () => {
-            const redirectUrl = redirectUrlInput.value;
-            const newTab = window.open('about:blank', '_blank');
-            newTab.location.href = redirectUrl;
-        });
-    </script>
-</body>
-</html>
-
-
