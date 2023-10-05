@@ -262,27 +262,64 @@
             width: 300px;
             outline: none;
         }
+
+        #results {
+            margin-top: 20px;
+        }
+
+        .result-item {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin: 5px;
+            background-color: #fff;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
     <div id="searchContainer">
         <h1>Game Search</h1>
         <input type="text" id="searchInput" placeholder="Search for games...">
+        <div id="results"></div>
     </div>
 
     <script>
         const searchInput = document.getElementById('searchInput');
+        const resultsContainer = document.getElementById('results');
+
+        function searchGames(searchTerm) {
+            // Simulate a search for games based on the search term
+            const fakeResults = [
+                'Game 1',
+                'Game 2',
+                'Game 3',
+                'Another Game',
+            ];
+
+            // Display search results
+            resultsContainer.innerHTML = '';
+
+            fakeResults.forEach((result) => {
+                const resultItem = document.createElement('div');
+                resultItem.className = 'result-item';
+                resultItem.textContent = result;
+                resultItem.addEventListener('click', () => {
+                    searchInput.value = result;
+                    resultsContainer.innerHTML = '';
+                });
+                resultsContainer.appendChild(resultItem);
+            });
+        }
 
         searchInput.addEventListener('input', () => {
             const searchTerm = searchInput.value.trim();
-            
-            // Perform a search or display results here
-            // For simplicity, you can display the search term for now
-            console.log(`Searching for: ${searchTerm}`);
+            searchGames(searchTerm);
         });
     </script>
 </body>
 </html>
+
 
 
 
