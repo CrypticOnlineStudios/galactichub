@@ -466,66 +466,6 @@
 </body>
 </html>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scroll to Top Button</title>
-    <style>
-        /* Styling for the scroll-to-top button */
-        .scroll-to-top {
-            position: fixed;
-            bottom: 55px; /* Adjust the bottom value for higher position */
-            right: 20px;
-            background-color: black; /* Background color */
-            color: white; /* Text color */
-            border: none;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            font-size: 24px; /* Increased font size */
-            cursor: pointer;
-            opacity: 0;
-            transition: opacity 0.3s ease-in-out;
-        }
-
-        .scroll-to-top:hover {
-            background-color: #333; /* Darker background color on hover */
-        }
-    </style>
-</head>
-<body>
-    <!-- Content goes here -->
-    
-    <!-- Scroll-to-top button -->
-    <button class="scroll-to-top" id="scrollBtn" onclick="scrollToTop()">&#8593;</button>
-
-    <script>
-        // Function to check scroll position and show/hide the button
-        window.onscroll = function() {
-            scrollFunction();
-        };
-
-        function scrollFunction() {
-            const scrollBtn = document.getElementById("scrollBtn");
-
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                // Show the button when the page is scrolled down
-                scrollBtn.style.opacity = "1";
-            } else {
-                // Hide the button when at the top of the page
-                scrollBtn.style.opacity = "0";
-            }
-        }
-
-        // Function to scroll back to the top smoothly
-        function scrollToTop() {
-            window.scroll({ top: 0, left: 0, behavior: 'smooth' });
-        }
-    </script>
-</body>
-</html>
 
 
 
