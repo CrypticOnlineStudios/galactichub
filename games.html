@@ -231,7 +231,6 @@
     </script>
 </body>
 </html>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -245,13 +244,13 @@
             font-family: Arial, sans-serif;
             background-color: #f0f0f0;
             display: flex;
-            justify-content: center;
+            flex-direction: column; /* Allow vertical scrolling */
             align-items: center;
-            min-height: 100vh;
         }
 
         #searchContainer {
             text-align: center;
+            margin-top: 20px;
         }
 
         #searchInput {
@@ -265,137 +264,31 @@
 
         #results {
             margin-top: 20px;
-        }
-
-        .result-item {
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            margin: 5px;
-            background-color: #fff;
-            cursor: pointer;
-        }
-    </style>
-</head>
-<body>
-    <div id="searchContainer">
-        <h1>Game Search</h1>
-        <input type="text" id="searchInput" placeholder="Search for games...">
-        <div id="results"></div>
-    </div>
-
-    <script>
-        const searchInput = document.getElementById('searchInput');
-        const resultsContainer = document.getElementById('results');
-
-        // Simulated game data
-        const gameData = [
-            'Retro Bowl',
-            'Minecraft',
-            'Among Us',
-            'Cookie Clicker',
-            'Slope',
-            'Subway Surfers',
-            'Madalin Stunt Cars 2',
-            'Temple Run 2',
-        ];
-
-        function filterGamesByFirstLetter(searchTerm) {
-            const filteredGames = gameData.filter((game) => {
-                const firstLetter = game.charAt(0).toLowerCase();
-                return firstLetter === searchTerm.toLowerCase();
-            });
-
-            return filteredGames;
-        }
-
-        function displayResults(results) {
-            resultsContainer.innerHTML = '';
-
-            results.forEach((result) => {
-                const resultItem = document.createElement('div');
-                resultItem.className = 'result-item';
-                resultItem.textContent = result;
-                resultItem.addEventListener('click', () => {
-                    searchInput.value = result;
-                    resultsContainer.innerHTML = '';
-                });
-                resultsContainer.appendChild(resultItem);
-            });
-        }
-
-        searchInput.addEventListener('input', () => {
-            const searchTerm = searchInput.value.trim();
-            const filteredResults = filterGamesByFirstLetter(searchTerm);
-            displayResults(filteredResults);
-        });
-    </script>
-</body>
-</html>
-
-
-
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fading Box</title>
-    <style>
-        /* Center the box both horizontally and vertically */
-       body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 0;
-            background-color: #f0f0f0; /* Add a background color */
-            flex-direction: column; /* Allow vertical scrolling */
-        }
-
-        /* Container for the boxes */
-        .box-container-wrapper {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
+        }
+
+        .result-item {
+            width: calc(25% - 20px); /* 25% width with spacing in between */
+            max-width: 200px; /* Reduce the maximum width */
+            background: rgba(255, 255, 255, 0.7); /* Semi-transparent black background */
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 15px; /* Increased border radius */
             padding: 20px;
-        }
-
-        /* Styles for the container */
-      .box-container {
-    width: calc(25% - 20px); /* 25% width with spacing in between */
-    max-width: 200px; /* Reduce the maximum width */
-    background: rgba(255, 255, 255, 0.7); /* Semi-transparent black background */
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    border-radius: 15px; /* Increased border radius */
-    padding: 20px;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-    margin: 10px; /* Add margin for spacing */
-    color: white; /* Text color */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    transform: scale(1); /* Initial scale */
-    transform-origin: center center;
-}
-
-        /* Styles for the title */
-        .box-title {
-            font-size: 18px;
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-
-        /* Styles for the description */
-        .box-description {
-            font-size: 14px;
-            margin-bottom: 10px;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            margin: 10px; /* Add margin for spacing */
+            color: white; /* Text color */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transform: scale(1); /* Initial scale */
+            transform-origin: center center;
         }
 
         /* Styles for the "Play" button */
@@ -411,159 +304,63 @@
         }
 
         /* Smooth grow effect on hover for the "Play" button */
-        .box-container:hover .play-button {
+        .result-item:hover .play-button {
             transform: scale(1.1);
         }
 
         /* Hover effect */
-        .box-container:hover {
+        .result-item:hover {
             background-color: rgba(255, 255, 255, 0.7); /* Background color with opacity */
         }
     </style>
 </head>
 <body>
-    <!-- Container for the boxes -->
-    <div class="box-container-wrapper">
+    <div id="searchContainer">
+        <h1>Game Search</h1>
+        <input type="text" id="searchInput" placeholder="Search for games...">
+    </div>
+
+    <div id="results">
         <!-- Box 1 - Among Us -->
-        <a href="https://galactic-mu.vercel.app/gfiles/among-us/" class="box-container" id="box1">
+        <div class="result-item" id="box1">
             <div class="box-title">Among Us</div>
             <div class="box-description">Among Us Unblocked</div>
             <button class="play-button">Play</button>
-        </a>
+        </div>
         
         <!-- Box 2 - Minecraft -->
-        <a href="https://galactic-mu.vercel.app/gfiles/eaglercraft/" class="box-container" id="box2">
+        <div class="result-item" id="box2">
             <div class="box-title">Minecraft</div>
             <div class="box-description">Minecraft Unblocked</div>
             <button class="play-button">Play</button>
-        </a>
+        </div>
 
-        <!-- Box 3 - Retrobowl -->
-        <a href="https://galactic-mu.vercel.app/gfiles/retro-bowl/" class="box-container" id="box3">
-            <div class="box-title">Retrobowl</div>
-            <div class="box-description">Retrobowl Unblocked</div>
-            <button class="play-button">Play</button>
-        </a>
-
-        <!-- Box 4 - Cookie Clicker -->
-        <a href="https://galactic-mu.vercel.app/gfiles/cookieclicker/" class="box-container" id="box4">
-            <div class="box-title">Cookie Clicker</div>
-            <div class="box-description">Cookie Clicker Unblocked</div>
-            <button class="play-button">Play</button>
-        </a>
-
-        <!-- Box 5 - Moto X3M -->
-        <a href="https://galactic-mu.vercel.app/gfiles/motox3m/" class="box-container" id="box5">
-            <div class="box-title">Moto X3M</div>
-            <div class="box-description">Moto X3M Unblocked</div>
-            <button class="play-button">Play</button>
-        </a>
-        
-        <!-- Box 6 - Slope -->
-        <a href="https://galactic-mu.vercel.app/gfiles/slope/" class="box-container" id="box6">
-            <div class="box-title">Slope</div>
-            <div class="box-description">Slope Unblocked</div>
-            <button class="play-button">Play</button>
-        </a>
-      
-        <!-- Box 7 - Subway Surfers -->
-        <a href="https://galactic-mu.vercel.app/gfiles/subway-surfers/" class="box-container" id="box7">
-            <div class="box-title">Subway Surfers</div>
-            <div class="box-description">Subway Surfers Unblocked</div>
-            <button class="play-button">Play</button>
-        </a>
-        
-        <!-- Box 8 - Madalin Stunt Cars 2 -->
-        <a href="https://galactic-mu.vercel.app/gfiles/madalin-cars-2/" class="box-container" id="box8">
-            <div class="box-title">Madalin Stunt Cars 2</div>
-            <div class="box-description">Madalin Stunt Cars 2 Unblocked</div>
-            <button class="play-button">Play</button>
-        </a>
-        
-        <!-- Box 9 - Temple Run 2 -->
-        <a href="https://galactic-mu.vercel.app/gfiles/temple-run-2/" class="box-container" id="box9">
-            <div class="box-title">Temple Run 2</div>
-            <div class="box-description">Temple Run 2 Unblocked</div>
-            <button class="play-button">Play</button>
-        </a>
-
-          <!-- Box 10 - BasketBall Stars -->
-        <a href="https://oddpvp.netlify.app/play/basketball-stars/" class="box-container" id="box10">
-            <div class="box-title">BasketBall Stars</div>
-            <div class="box-description">BasketBall Stars Unblocked</div>
-            <button class="play-button">Play</button>
-        </a>
-
-           <!-- Box 11 - Paper.io 2 -->
-        <a href="https://galactic-mu.vercel.app/gfiles/paperio2/" class="box-container" id="box11">
-            <div class="box-title">Paper.io 2</div>
-            <div class="box-description">Paper.io 2 Unblocked</div>
-            <button class="play-button">Play</button>
-        </a>
-
-            <!-- Box 12 - Super Mario 64 -->
-        <a href="https://galactic-mu.vercel.app/gfiles/sm64/" class="box-container" id="box12">
-            <div class="box-title">Super Mario 64</div>
-            <div class="box-description">Super Mario 64 Unblocked</div>
-            <button class="play-button">Play</button>
-        </a>
-
-        <!-- Box 13 - Movies -->
-        <a href="https://oddpvp.netlify.app/play/123movies/agree/" class="box-container" id="box13">
-            <div class="box-title">123Movies</div>
-            <div class="box-description">123Movies Unblocked</div>
-            <button class="play-button">Watch Movies</button>
-        </a>
-
-        <!-- Box 14 - 1v1.lol -->
-        <a href="https://oddpvp.netlify.app/play/1v1/" class="box-container" id="box14">
-            <div class="box-title">1v1.lol</div>
-            <div class="box-description">1v1.lol Unblocked</div>
-            <button class="play-button">Play</button>
-        </a>
-
-                <!-- Box 15 - Cluster Rush -->
-        <a href="https://oddpvp.netlify.app/play/cluster-rush/" class="box-container" id="box15">
-            <div class="box-title">Cluster Rush</div>
-            <div class="box-description">Cluster Rush Unblocked</div>
-            <button class="play-button">Play</button>
-        </a>
-
-             <!-- Box 16 - Crossy Road -->
-        <a href="https://oddpvp.netlify.app/play/crossyroad/" class="box-container" id="box16">
-            <div class="box-title">Crossy Road</div>
-            <div class="box-description">Crossy Road Unblocked</div>
-            <button class="play-button">Play</button>
-        </a>
-
-         <!-- Box 17 - Jetpack Joyride -->
-        <a href="https://oddpvp.netlify.app/play/jetpack-joyride/" class="box-container" id="box17">
-            <div class="box-title">Jetpack Joyride</div>
-            <div class="box-description">Jetpack Joyride Unblocked</div>
-            <button class="play-button">Play</button>
-        </a>
+        <!-- Add more boxes as needed -->
     </div>
 
-    <div style="height: 2000px; background-color: #f0f0f0;"></div>
-
-
     <script>
-        // JavaScript to control box animations
-        const boxes = document.querySelectorAll('.box-container');
+        const searchInput = document.getElementById('searchInput');
+        const boxes = document.querySelectorAll('.result-item');
 
-        function fadeInBox(index) {
-            if (index < boxes.length) {
-                boxes[index].style.opacity = '1';
-                setTimeout(() => {
-                    fadeInBox(index + 1);
-                }, 300); // Adjust the delay between box appearances (in milliseconds)
-            }
+        // Function to filter and display boxes based on search input
+        function filterAndDisplayResults() {
+            const searchTerm = searchInput.value.trim().toLowerCase();
+
+            boxes.forEach((box) => {
+                const boxTitle = box.querySelector('.box-title').textContent.toLowerCase();
+                if (boxTitle.startsWith(searchTerm)) {
+                    box.style.display = 'block';
+                } else {
+                    box.style.display = 'none';
+                }
+            });
         }
 
-        // Trigger the animation when the page loads
-        window.addEventListener('load', function() {
-            fadeInBox(0);
-        });
+        // Event listener for search input changes
+        searchInput.addEventListener('input', filterAndDisplayResults);
+
+        // Initial filter to show all boxes
+        filterAndDisplayResults();
     </script>
 </body>
 </html>
