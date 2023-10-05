@@ -232,6 +232,57 @@
 </body>
 </html>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Search</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        #searchContainer {
+            text-align: center;
+        }
+
+        #searchInput {
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            width: 300px;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="searchContainer">
+        <h1>Game Search</h1>
+        <input type="text" id="searchInput" placeholder="Search for games...">
+    </div>
+
+    <script>
+        const searchInput = document.getElementById('searchInput');
+
+        searchInput.addEventListener('input', () => {
+            const searchTerm = searchInput.value.trim();
+            
+            // Perform a search or display results here
+            // For simplicity, you can display the search term for now
+            console.log(`Searching for: ${searchTerm}`);
+        });
+    </script>
+</body>
+</html>
 
 
 
