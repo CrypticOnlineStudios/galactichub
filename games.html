@@ -240,12 +240,6 @@
 </html>
 
 
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -254,7 +248,7 @@
     <title>Fading Box</title>
     <style>
         /* Center the box both horizontally and vertically */
-       body {
+        body {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -272,27 +266,28 @@
         }
 
         /* Styles for the container */
-      .box-container {
-    width: calc(25% - 20px); /* 25% width with spacing in between */
-    max-width: 200px; /* Reduce the maximum width */
-    background: rgba(255, 255, 255, 0.7); /* Semi-transparent black background */
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    border-radius: 15px; /* Increased border radius */
-    padding: 20px;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-    margin: 10px; /* Add margin for spacing */
-    color: white; /* Text color */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    transform: scale(1); /* Initial scale */
-    transform-origin: center center;
-}
+        .box-container {
+            width: calc(25% - 20px); /* 25% width with spacing in between */
+            max-width: 200px; /* Reduce the maximum width */
+            background: rgba(0, 123, 255, 0.7); /* Semi-transparent blue background */
+            box-shadow: 0px 0px 20px rgba(0, 123, 255, 0.4); /* Blue shadow */
+            border-radius: 15px; /* Increased border radius */
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            margin: 10px; /* Add margin for spacing */
+            color: white; /* Text color */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transform: scale(1); /* Initial scale */
+            transform-origin: center center;
+            text-align: center; /* Center text */
+        }
 
         /* Styles for the title */
         .box-title {
@@ -326,7 +321,28 @@
 
         /* Hover effect */
         .box-container:hover {
-            background-color: rgba(255, 255, 255, 0.7); /* Background color with opacity */
+            background-color: rgba(0, 123, 255, 0.9); /* Darker background color with more opacity */
+            box-shadow: 0px 0px 30px rgba(0, 123, 255, 0.6); /* Enhanced shadow on hover */
+            transform: scale(1.05); /* Slight scale increase on hover */
+            transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+
+        /* Glowing effect */
+        @keyframes glow {
+            0% {
+                box-shadow: 0px 0px 20px rgba(0, 123, 255, 0.4);
+            }
+            50% {
+                box-shadow: 0px 0px 30px rgba(0, 123, 255, 0.6);
+            }
+            100% {
+                box-shadow: 0px 0px 20px rgba(0, 123, 255, 0.4);
+            }
+        }
+
+        /* Apply glowing effect on hover */
+        .box-container:hover {
+            animation: glow 1s infinite;
         }
     </style>
 </head>
@@ -396,28 +412,28 @@
             <button class="play-button">Play</button>
         </a>
 
-          <!-- Box 10 - BasketBall Stars -->
+        <!-- Box 10 - BasketBall Stars -->
         <a href="https://oddpvp.netlify.app/play/basketball-stars/" class="box-container" id="box10">
             <div class="box-title">BasketBall Stars</div>
             <div class="box-description">BasketBall Stars Unblocked</div>
             <button class="play-button">Play</button>
         </a>
 
-           <!-- Box 11 - Paper.io 2 -->
+        <!-- Box 11 - Paper.io 2 -->
         <a href="https://galactic-mu.vercel.app/gfiles/paperio2/" class="box-container" id="box11">
             <div class="box-title">Paper.io 2</div>
             <div class="box-description">Paper.io 2 Unblocked</div>
             <button class="play-button">Play</button>
         </a>
 
-            <!-- Box 12 - Super Mario 64 -->
+        <!-- Box 12 - Super Mario 64 -->
         <a href="https://galactic-mu.vercel.app/gfiles/sm64/" class="box-container" id="box12">
             <div class="box-title">Super Mario 64</div>
             <div class="box-description">Super Mario 64 Unblocked</div>
             <button class="play-button">Play</button>
         </a>
 
-        <!-- Box 13 - Movies -->
+        <!-- Box 13 - 123Movies -->
         <a href="https://oddpvp.netlify.app/play/123movies/agree/" class="box-container" id="box13">
             <div class="box-title">123Movies</div>
             <div class="box-description">123Movies Unblocked</div>
@@ -431,21 +447,21 @@
             <button class="play-button">Play</button>
         </a>
 
-                <!-- Box 15 - Cluster Rush -->
+        <!-- Box 15 - Cluster Rush -->
         <a href="https://oddpvp.netlify.app/play/cluster-rush/" class="box-container" id="box15">
             <div class="box-title">Cluster Rush</div>
             <div class="box-description">Cluster Rush Unblocked</div>
             <button class="play-button">Play</button>
         </a>
 
-             <!-- Box 16 - Crossy Road -->
+        <!-- Box 16 - Crossy Road -->
         <a href="https://oddpvp.netlify.app/play/crossyroad/" class="box-container" id="box16">
             <div class="box-title">Crossy Road</div>
             <div class="box-description">Crossy Road Unblocked</div>
             <button class="play-button">Play</button>
         </a>
 
-         <!-- Box 17 - Jetpack Joyride -->
+        <!-- Box 17 - Jetpack Joyride -->
         <a href="https://oddpvp.netlify.app/play/jetpack-joyride/" class="box-container" id="box17">
             <div class="box-title">Jetpack Joyride</div>
             <div class="box-description">Jetpack Joyride Unblocked</div>
@@ -454,7 +470,6 @@
     </div>
 
     <div style="height: 2000px; background-color: #f0f0f0;"></div>
-
 
     <script>
         // JavaScript to control box animations
