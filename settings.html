@@ -239,7 +239,6 @@
 </body>
 </html>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -264,12 +263,7 @@
             transition: opacity 0.5s ease-in-out;
         }
 
-        /* Styles for the logo */
-        .logo {
-            max-width: 100px; /* Adjust logo size as needed */
-        }
-
-        /* Styles for the change name and favicon section */
+        /* Styles for the change section */
         .change-section {
             margin-top: 20px;
         }
@@ -301,17 +295,15 @@
 <body>
     <!-- GUI Container -->
     <div class="gui-container">
-        <!-- Logo -->
-        <img src="your_logo.png" alt="Logo" class="logo">
-        <p>Cloak Website</p>
+        <h1>Cloak Website</h1>
 
         <!-- Change Name and Favicon Section -->
         <div class="change-section">
-            <input type="text" placeholder="Enter Website Name">
-            <button>Change Name</button>
+            <input type="text" id="new-title" placeholder="Enter Website Name">
+            <button onclick="changeTitle()">Change Name</button>
 
-            <input type="text" placeholder="Enter Favicon URL">
-            <button>Change Favicon</button>
+            <input type="text" id="new-favicon" placeholder="Enter Favicon URL">
+            <button onclick="changeFavicon()">Change Favicon</button>
         </div>
     </div>
 
@@ -327,6 +319,26 @@
         window.addEventListener('load', function() {
             fadeInGUI();
         });
+
+        // Function to change the website title
+        function changeTitle() {
+            const newTitle = document.getElementById('new-title').value;
+            document.title = newTitle;
+        }
+
+        // Function to change the favicon
+        function changeFavicon() {
+            const newFavicon = document.getElementById('new-favicon').value;
+            const favicon = document.querySelector('link[rel="icon"]');
+            if (favicon) {
+                favicon.href = newFavicon;
+            } else {
+                const newLink = document.createElement('link');
+                newLink.rel = 'icon';
+                newLink.href = newFavicon;
+                document.head.appendChild(newLink);
+            }
+        }
     </script>
 </body>
 </html>
