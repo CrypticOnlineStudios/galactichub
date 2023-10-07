@@ -266,11 +266,11 @@
 
         /* Styles for the container */
         .box-container {
-            width: calc(33.33% - 20px); /* 33.33% width with spacing in between for three columns */
-            max-width: 200px; /* Maximum width */
-            background: linear-gradient(to bottom, #3498db, #2980b9); /* Gradient background */
-            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); /* Refined shadow */
-            border-radius: 10px; /* Slightly rounded corners */
+            width: calc(20% - 20px); /* 20% width with spacing in between */
+            max-width: 150px; /* Reduce the maximum width for smaller boxes */
+            background: rgba(0, 123, 255, 0.7); /* Semi-transparent blue background */
+            box-shadow: 0px 0px 20px rgba(0, 123, 255, 0.4); /* Blue shadow */
+            border-radius: 20px; /* Increased border radius for rounded corners */
             padding: 20px;
             opacity: 0;
             transition: opacity 0.5s ease-in-out;
@@ -288,14 +288,6 @@
             text-align: center; /* Center text */
         }
 
-        /* Styles for the image */
-        .box-image {
-            max-width: 100px; /* Adjust the image width as needed */
-            max-height: 100px; /* Adjust the image height as needed */
-            border-radius: 50%; /* Circular image */
-            margin-bottom: 10px;
-        }
-
         /* Styles for the title */
         .box-title {
             font-size: 18px;
@@ -311,7 +303,7 @@
 
         /* Styles for the "Play" button */
         .play-button {
-            background-color: #2980b9; /* Button color */
+            background-color: #00bfff;
             color: white;
             border: none;
             border-radius: 5px;
@@ -328,22 +320,22 @@
 
         /* Hover effect */
         .box-container:hover {
-            background: linear-gradient(to bottom, #2980b9, #3498db); /* Darker gradient on hover */
-            box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+            background-color: rgba(0, 123, 255, 0.9); /* Darker background color with more opacity */
+            box-shadow: 0px 0px 30px rgba(0, 123, 255, 0.6); /* Enhanced shadow on hover */
             transform: scale(1.05); /* Slight scale increase on hover */
-            transition: background 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
         }
 
         /* Glowing effect */
         @keyframes glow {
             0% {
-                box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+                box-shadow: 0px 0px 20px rgba(0, 123, 255, 0.4);
             }
             50% {
-                box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3);
+                box-shadow: 0px 0px 30px rgba(0, 123, 255, 0.6);
             }
             100% {
-                box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+                box-shadow: 0px 0px 20px rgba(0, 123, 255, 0.4);
             }
         }
 
@@ -476,4 +468,3 @@
     </script>
 </body>
 </html>
-
