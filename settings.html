@@ -240,3 +240,93 @@
 </html>
 
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloak Website</title>
+    <style>
+        /* Center the GUI both horizontally and vertically */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0; /* Background color */
+        }
+
+        /* Styles for the GUI container */
+        .gui-container {
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        /* Styles for the logo */
+        .logo {
+            max-width: 100px; /* Adjust logo size as needed */
+        }
+
+        /* Styles for the change name and favicon section */
+        .change-section {
+            margin-top: 20px;
+        }
+
+        /* Styles for the input field */
+        input[type="text"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        /* Styles for the button */
+        button {
+            background-color: #00bfff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        /* Smooth fade-in effect for the GUI */
+        .fade-in {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <!-- GUI Container -->
+    <div class="gui-container">
+        <!-- Logo -->
+        <img src="your_logo.png" alt="Logo" class="logo">
+        <p>Cloak Website</p>
+
+        <!-- Change Name and Favicon Section -->
+        <div class="change-section">
+            <input type="text" placeholder="Enter Website Name">
+            <button>Change Name</button>
+
+            <input type="text" placeholder="Enter Favicon URL">
+            <button>Change Favicon</button>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript to trigger the fade-in effect
+        const guiContainer = document.querySelector('.gui-container');
+
+        function fadeInGUI() {
+            guiContainer.classList.add('fade-in');
+        }
+
+        // Trigger the animation when the page loads
+        window.addEventListener('load', function() {
+            fadeInGUI();
+        });
+    </script>
+</body>
+</html>
