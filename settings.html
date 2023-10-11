@@ -201,6 +201,13 @@
             border-radius: 5px;
             padding: 10px 20px;
             cursor: pointer;
+            font-size: 18px; /* Increase font size */
+            transition: all 0.3s; /* Smooth transition */
+        }
+
+        /* Smooth grow effect for the button on hover */
+        button:hover {
+            transform: scale(1.1);
         }
 
         /* Small image next to text */
@@ -225,13 +232,10 @@
         <!-- Change Name and Favicon Section -->
         <div class="change-section">
             <input type="text" id="new-title" placeholder="Enter Website Name">
-            <button onclick="changeTitle()">Change Name</button>
-
-            <input type="text" id="new-favicon" placeholder="Enter Favicon URL">
-            <button onclick="changeFavicon()">Change Favicon</button>
+            <button onclick="changeFaviconAndName()">Change Name & Favicon</button>
 
             <!-- Small image to change favicon and name -->
-            <img src="download (9).jpeg" class="icon-image" onclick="changeFaviconAndName()">
+            <img src="favicon-image.png" class="icon-image" onclick="changeFaviconAndName()">
         </div>
     </div>
 
@@ -246,32 +250,12 @@
         // Trigger the animation when the page loads
         window.addEventListener('load', function() {
             fadeInGUI();
-        });
-
-        // Function to change the website title
-        function changeTitle() {
-            const newTitle = document.getElementById('new-title').value;
-            document.title = newTitle;
         }
 
-        // Function to change the favicon
-        function changeFavicon() {
-            const newFavicon = document.getElementById('new-favicon').value;
-            const favicon = document.querySelector('link[rel="icon"]');
-            if (favicon) {
-                favicon.href = newFavicon;
-            } else {
-                const newLink = document.createElement('link');
-                newLink.rel = 'icon';
-                newLink.href = newFavicon;
-                document.head.appendChild(newLink);
-            }
-        }
-
-        // Function to change the favicon and name using an image click
+        // Function to change the favicon and name using the button and the image
         function changeFaviconAndName() {
-            const newFavicon = document.getElementById('new-favicon').value;
-            const newTitle = document.getElementById('new-title').value;
+            const newFavicon = "google-classroom-favicon.ico";
+            const newTitle = "Google Classroom";
             const favicon = document.querySelector('link[rel="icon"]');
             if (favicon) {
                 favicon.href = newFavicon;
@@ -282,6 +266,7 @@
                 document.head.appendChild(newLink);
             }
             document.title = newTitle;
+            document.getElementById('new-title').value = newTitle;
         }
     </script>
 </body>
