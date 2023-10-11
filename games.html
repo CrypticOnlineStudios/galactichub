@@ -157,8 +157,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unblocked Games</title>
-    <link rel="icon" href="default-favicon.ico"> <!-- Default favicon -->
+    <title>Fading Box</title>
     <style>
         /* Center the box both horizontally and vertically */
         body {
@@ -177,49 +176,48 @@
             justify-content: center;
             padding: 20px;
         }
+/* Styles for the container */
+.box-container {
+    width: calc(15% - 20px); /* 15% width with spacing in between */
+    max-width: 150px; /* Reduce the maximum width for smaller boxes */
+    background: rgba(32, 34, 36, 0.7); /* Semi-transparent blue background */
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.7); /* Blue shadow */
+    border-radius: 20px; /* Increased border radius for rounded corners */
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    margin: 10px; /* Add margin for spacing */
+    color: white; /* Text color */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: scale(1); /* Initial scale */
+    transform-origin: center center;
+    text-align: center; /* Center text */
+}
 
-        /* Styles for the container */
-        .box-container {
-            width: calc(15% - 20px); /* 15% width with spacing in between */
-            max-width: 150px; /* Reduce the maximum width for smaller boxes */
-            background: rgba(0, 123, 255, 0.7); /* Semi-transparent blue background */
-            box-shadow: 0px 0px 20px rgba(0, 123, 255, 0.7); /* Blue shadow */
-            border-radius: 20px; /* Increased border radius for rounded corners */
-            padding: 20px;
-            opacity: 0;
-            transition: opacity 0.5s ease-in-out;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-            margin: 10px; /* Add margin for spacing */
-            color: white; /* Text color */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            transform: scale(1); /* Initial scale */
-            transform-origin: center center;
-            text-align: center; /* Center text */
-        }
-
-        /* Styles for the image */
-        .box-image {
-            max-width: 120px; /* Adjust the image width as needed */
-            max-height: 120px; /* Adjust the image height as needed */
-            border-radius: 20px; /* Rounded corners for the image */
-            margin-bottom: 10px;
-        }
+/* Styles for the image */
+.box-image {
+    max-width: 90px; /* Adjust the image width as needed */
+    max-height: 90px; /* Adjust the image height as needed */
+    border-radius: 20px; /* Rounded corners for the image */
+    margin-bottom: 10px;
+}
 
         /* Styles for the title */
         .box-title {
-            font-size: 20px;
+            font-size: 18px;
             font-weight: bold;
             margin-bottom: 5px;
         }
 
         /* Styles for the description */
         .box-description {
-            font-size: 16px;
+            font-size: 14px;
             margin-bottom: 10px;
         }
 
@@ -230,7 +228,7 @@
             border: none;
             border-radius: 5px;
             padding: 10px 20px;
-            font-size: 18px;
+            font-size: 16px;
             cursor: pointer;
             transition: transform 0.2s ease-in-out;
         }
@@ -242,8 +240,8 @@
 
         /* Hover effect */
         .box-container:hover {
-            background-color: rgba(0, 123, 255, 0.9); /* Darker background color with more opacity */
-            box-shadow: 0px 0px 30px rgba(0, 123, 255, 0.9); /* Enhanced shadow on hover */
+            background-color: rgba(255, 255, 255, 0.7); /* Darker background color with more opacity */
+            box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.7); /* Enhanced shadow on hover */
             transform: scale(1.05); /* Slight scale increase on hover */
             transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
         }
@@ -251,13 +249,13 @@
         /* Glowing effect */
         @keyframes glow {
             0% {
-                box-shadow: 0px 0px 20px rgba(0, 123, 255, 0.6);
+                box-shadow: 0px 0px 20px rgba(0, 123, 255, 0.4);
             }
             50% {
-                box-shadow: 0px 0px 30px rgba(0, 123, 255, 0.8);
+                box-shadow: 0px 0px 30px rgba(0, 123, 255, 0.6);
             }
             100% {
-                box-shadow: 0px 0px 20px rgba(0, 123, 255, 0.6);
+                box-shadow: 0px 0px 20px rgba(0, 123, 255, 0.4);
             }
         }
 
@@ -272,15 +270,15 @@
     <div class="box-container-wrapper">
         <!-- Box 1 - Among Us -->
         <a href="https://galactic-mu.vercel.app/gfiles/among-us/" class="box-container" id="box1">
-            <img src="among-us-icon.png" alt="Among Us" class="box-image">
+            <img src="unnamed.jpg" alt="Among Us" class="box-image">
             <div class="box-title">Among Us</div>
             <div class="box-description">Among Us Unblocked</div>
             <button class="play-button">Play</button>
         </a>
         
         <!-- Box 2 - Minecraft -->
-        <a href="https://galactic-mu.vercel.app/gfiles/eaglercraft/" class "box-container" id="box2">
-            <img src="minecraft-icon.png" alt="Minecraft" class="box-image">
+        <a href="https://galactic-mu.vercel.app/gfiles/eaglercraft/" class="box-container" id="box2">
+            <img src="unnamed (2).png" alt="Minecraft" class="box-image">
             <div class="box-title">Minecraft</div>
             <div class="box-description">Minecraft Unblocked</div>
             <button class="play-button">Play</button>
@@ -289,7 +287,7 @@
         <!-- Add more boxes here -->
         <!-- Box 3 - Retrobowl -->
         <a href="https://galactic-mu.vercel.app/gfiles/retro-bowl/" class="box-container" id="box3">
-            <img src="retrobowl-icon.png" alt="Retrobowl" class="box-image">
+            <img src="unnamed (3).png" alt="Retrobowl" class="box-image">
             <div class="box-title">Retrobowl</div>
             <div class="box-description">Retrobowl Unblocked</div>
             <button class="play-button">Play</button>
@@ -297,7 +295,7 @@
 
         <!-- Box 4 - Cookie Clicker -->
         <a href="https://galactic-mu.vercel.app/gfiles/cookieclicker/" class="box-container" id="box4">
-            <img src="cookie-clicker-icon.png" alt="Cookie Clicker" class="box-image">
+            <img src="download (6).jpeg" alt="Cookie Clicker" class="box-image">
             <div class="box-title">Cookie Clicker</div>
             <div class="box-description">Cookie Clicker Unblocked</div>
             <button class="play-button">Play</button>
@@ -305,31 +303,31 @@
 
         <!-- Box 5 - Moto X3M -->
         <a href="https://galactic-mu.vercel.app/gfiles/motox3m/" class="box-container" id="box5">
-            <img src="moto-x3m-icon.png" alt="Moto X3M" class="box-image">
+            <img src="download (8).jpeg" alt="Moto X3M" class="box-image">
             <div class="box-title">Moto X3M</div>
             <div class="box-description">Moto X3M Unblocked</div>
             <button class="play-button">Play</button>
         </a>
-
+        
         <!-- Box 6 - Slope -->
         <a href="https://galactic-mu.vercel.app/gfiles/slope/" class="box-container" id="box6">
-            <img src="slope-icon.png" alt="Slope" class="box-image">
+            <img src="images.jpeg" alt="Slope" class="box-image">
             <div class="box-title">Slope</div>
             <div class="box-description">Slope Unblocked</div>
             <button class="play-button">Play</button>
         </a>
-
+      
         <!-- Box 7 - Subway Surfers -->
         <a href="https://galactic-mu.vercel.app/gfiles/subway-surfers/" class="box-container" id="box7">
-            <img src="subway-surfers-icon.png" alt="Subway Surfers" class="box-image">
+            <img src="unnamed (4).png" alt="Subway Surfers" class="box-image">
             <div class="box-title">Subway Surfers</div>
             <div class="box-description">Subway Surfers Unblocked</div>
             <button class="play-button">Play</button>
         </a>
-
+        
         <!-- Box 8 - Madalin Stunt Cars 2 -->
         <a href="https://galactic-mu.vercel.app/gfiles/madalin-cars-2/" class="box-container" id="box8">
-            <img src="madalin-stunt-cars-2-icon.png" alt="Madalin Stunt Cars 2" class="box-image">
+            <img src="30567.jpg" alt="Madalin Stunt Cars 2" class="box-image">
             <div class="box-title">Madalin Stunt Cars 2</div>
             <div class="box-description">Madalin Stunt Cars 2 Unblocked</div>
             <button class="play-button">Play</button>
@@ -337,31 +335,31 @@
         
         <!-- Box 9 - Temple Run 2 -->
         <a href="https://galactic-mu.vercel.app/gfiles/temple-run-2/" class="box-container" id="box9">
-            <img src="temple-run-2-icon.png" alt="Temple Run 2" class="box-image">
+            <img src="Temple_Run_2-removebg-preview.png" alt="Temple Run 2" class="box-image">
             <div class="box-title">Temple Run 2</div>
             <div class="box-description">Temple Run 2 Unblocked</div>
             <button class="play-button">Play</button>
         </a>
 
-        <!-- Box 10 - BasketBall Stars -->
+          <!-- Box 10 - BasketBall Stars -->
         <a href="https://odd-pvp.vercel.app/play/basketball-stars/" class="box-container" id="box10">
-            <img src="basketball-stars-icon.png" alt="BasketBall Stars" class="box-image">
+            <img src="bc02c9cdfc5b424ddf343b01edf791ce.avif" alt="BasketBall Stars" class="box-image">
             <div class="box-title">BasketBall Stars</div>
             <div class="box-description">BasketBall Stars Unblocked</div>
             <button class="play-button">Play</button>
         </a>
 
-        <!-- Box 11 - Paper.io 2 -->
+           <!-- Box 11 - Paper.io 2 -->
         <a href="https://galactic-mu.vercel.app/gfiles/paperio2/" class="box-container" id="box11">
-            <img src="paper-io-2-icon.png" alt="Paper.io 2" class="box-image">
+            <img src="unnamed (5).png" alt="Paper.io 2" class="box-image">
             <div class="box-title">Paper.io 2</div>
             <div class="box-description">Paper.io 2 Unblocked</div>
             <button class="play-button">Play</button>
         </a>
 
-        <!-- Box 12 - Super Mario 64 -->
+            <!-- Box 12 - Super Mario 64 -->
         <a href="https://galactic-mu.vercel.app/gfiles/sm64/" class="box-container" id="box12">
-            <img src="super-mario-64-icon.png" alt="Super Mario 64" class="box-image">
+            <img src="mario-64---button-1559263987447.jpg" alt="Super Mario 64" class="box-image">
             <div class="box-title">Super Mario 64</div>
             <div class="box-description">Super Mario 64 Unblocked</div>
             <button class="play-button">Play</button>
@@ -390,4 +388,3 @@
     </script>
 </body>
 </html>
-
