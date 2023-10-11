@@ -40,13 +40,23 @@
             top: 0;
             left: 0;
             right: 0;
-            background-color: #f5f7fa;
+            background-color: #333;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 10px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             transition: all 0.3s;
+            animation: fade-in 1s ease; /* Fade-in animation */
+        }
+
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
         }
 
         .navbar ul {
@@ -72,7 +82,7 @@
         }
 
         .navbar li a:hover {
-            background-color: #e3e5e8;
+            background-color: #555;
             transform: scale(1.1); /* Scale up on hover */
         }
 
