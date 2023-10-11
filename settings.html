@@ -192,7 +192,13 @@
             margin-right: 10px;
         }
 
-        /* Styles for the button */
+        /* Styles for the button and small icon */
+        .action-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
         button {
             background-color: #00bfff;
             color: white;
@@ -211,10 +217,11 @@
 
         /* Small image next to text */
         .icon-image {
-            width: 45px;
-            height: 45px;
+            width: 30px;
+            height: 30px;
             margin-left: 10px;
             cursor: pointer;
+            transition: transform 0.3s; /* Smooth scale transition */
         }
 
         /* Smooth fade-in effect for the GUI */
@@ -231,10 +238,11 @@
         <!-- Change Name and Favicon Section -->
         <div class="change-section">
             <input type="text" id="new-title" placeholder="Enter Website Name">
-            <button onclick="changeFaviconAndName()">Change Name & Favicon</button>
-
-            <!-- Small image to change favicon and name -->
-            <img src="download (9).jpeg" class="icon-image" onclick="changeFaviconAndName()">
+            <div class="action-container">
+                <button onclick="changeFaviconAndName()">Change Name & Favicon</button>
+                <!-- Small image to change favicon and name -->
+                <img src="favicon-image.png" class="icon-image" onclick="changeFaviconAndName()">
+            </div>
         </div>
     </div>
 
@@ -253,7 +261,7 @@
 
         // Function to change the favicon and name using the button and the image
         function changeFaviconAndName() {
-            const newFavicon = "download (9).jpeg";
+            const newFavicon = "download (9).jpeg"; // Provide a valid favicon URL
             const newTitle = "Google Classroom";
             const favicon = document.querySelector('link[rel="icon"]');
             if (favicon) {
