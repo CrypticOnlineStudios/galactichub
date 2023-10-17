@@ -8,27 +8,8 @@
         body {
             margin: 0;
             padding: 0;
-            background-image: url('44f9321910496637ba53a1691300e193.gif'); 
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: fixed; /* Ensures the background remains fixed */
-        }
-
-        /* Add your other CSS styles here */
-    </style>
-</head>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modern Navbar</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-image: url('your-background-image.jpg');
+            background-image:
+            url('44f9321910496637ba53a1691300e193.gif');
             background-size: cover;
             background-repeat: no-repeat;
             background-attachment: fixed;
@@ -42,6 +23,10 @@
             padding: 20px 40px; /* Increase top and bottom padding */
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle underglow shadow */
             transition: all 0.3s;
+            position: fixed; /* Fixed position to stay on top */
+            top: 0;
+            width: 100%; /* Full width */
+            z-index: 1; /* Ensure the navbar is on top of other content */
         }
 
         .navbar ul {
