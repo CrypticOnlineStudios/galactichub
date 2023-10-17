@@ -8,56 +8,25 @@
         body {
             margin: 0;
             padding: 0;
-            background-image: url('44f9321910496637ba53a1691300e193.gif'); 
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: fixed; /* Ensures the background remains fixed */
-        }
-
-        /* Add your other CSS styles here */
-    </style>
-</head>
-</html>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modern Navigation Bar</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-image: url('44f9321910496637ba53a1691300e193.gif');
+            background-image:
+            url('2I3c.gif');
             background-size: cover;
             background-repeat: no-repeat;
             background-attachment: fixed;
         }
 
-        /* Navigation Bar Styles */
         .navbar {
+            display: flex;
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 40px; /* Increase top and bottom padding */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle underglow shadow */
+            transition: all 0.3s;
             position: fixed; /* Fixed position to stay on top */
             top: 0;
-            left: 0;
-            right: 0;
-            background-color: #f0f3f7;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 10px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s;
-            animation: fade-in 1s ease; /* Fade-in animation */
-        }
-
-        @keyframes fade-in {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
+            width: 100%; /* Full width */
+            z-index: 1; /* Ensure the navbar is on top of other content */
         }
 
         .navbar ul {
@@ -65,6 +34,7 @@
             margin: 0;
             padding: 0;
             display: flex;
+            gap: 30px; /* Increased spacing between sections */
         }
 
         .navbar li {
@@ -74,79 +44,65 @@
 
         .navbar li a {
             text-decoration: none;
-            color: #000; /* Black text color */
+            color: white;
+            font-family: 'Arial', sans-serif; /* Modern font family */
+            font-size: 18px;
+            font-weight: 600; /* Bolder text */
             padding: 15px;
             display: flex;
             align-items: center;
             transition: all 0.3s;
-            font-size: 18px; /* Increase font size */
+            letter-spacing: 2px; /* Increased letter spacing */
+        }
+
+        .navbar li a img {
+            margin-right: 10px; /* Add spacing between image and text */
+            max-width: 25px; /* Set the desired image size */
         }
 
         .navbar li a:hover {
-            background-color: #f0f3f7;
-            transform: scale(1.1); /* Scale up on hover */
-        }
-
-        .navbar-icon {
-            width: 40px; /* Increase icon size */
-            height: 40px; /* Increase icon size */
-            margin-right: 10px;
-            transition: transform 0.3s; /* Smooth scale transition */
-        }
-
-        .content-container {
-            padding: 20px;
-            text-align: center; /* Center content */
-            margin-top: 70px; /* Adjust to accommodate the fixed navbar height */
+            background-color: rgba(0, 0, 0, 0.5); /* Darker background on hover */
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+            font-size: 19px;
         }
     </style>
 </head>
 <body>
-    <!-- Navigation Bar -->
+    <!-- Navbar -->
     <div class="navbar">
         <ul>
             <li>
                 <a href="index.html">
-                    <img src="home.png" alt="Home" class="navbar-icon">
-                    Home
+                    <img src="home.png" alt="Home Icon"> Home
                 </a>
             </li>
             <li>
                 <a href="games.html">
-                    <img src="pngtree-game-control-line-icon-vector-png-image_1904129-removebg-preview.png" alt="Games" class="navbar-icon">
-                    Games
+                    <img src="pngtree-game-control-line-icon-vector-png-image_1904129-removebg-preview.png" alt="Games"> Services
                 </a>
             </li>
             <li>
                 <a href="apps.html">
-                    <img src="pngtree-app-icon-isolated-on-abstract-background-png-image_1848502__1_-removebg-preview.png" alt="Apps" class="navbar-icon">
-                    Apps
+                    <img src="pngtree-app-icon-isolated-on-abstract-background-png-image_1848502__1_-removebg-preview.png" alt="Portfolio Icon"> Apps
                 </a>
             </li>
             <li>
                 <a href="proxies.html">
-                    <img src="3771343.png" alt="Proxies" class="navbar-icon">
-                    Proxies
+                    <img src="3771343.png" alt="Contact Icon"> Proxies
                 </a>
             </li>
             <li>
                 <a href="changelog.html">
-                    <img src="5278663.png" alt="Updates" class="navbar-icon">
-                    Updates
+                    <img src="5278663.png" alt="Contact Icon"> Changelog
                 </a>
             </li>
             <li>
                 <a href="settings.html">
-                    <img src="239262 (1).png" alt="Settings" class="navbar-icon">
-                    Settings
+                    <img src="239262 (1).png" alt="Contact Icon"> Settings
                 </a>
             </li>
         </ul>
-    </div>
-
-    <!-- Content container -->
-    <div class="content-container">
-        <!-- Your page content goes here -->
     </div>
 </body>
 </html>
