@@ -125,16 +125,17 @@
             background-color: rgba(0, 0, 0, 0.7);
             color: white;
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
-            padding: 10px 20px;
+            padding: 10px 0;
+            font-size: 24px;
         }
 
         .search-bar {
             background-color: rgba(0, 0, 0, 0.5);
             padding: 10px 20px;
             display: flex;
-            align-items: center;
+            justify-content: center;
         }
 
         .search-input {
@@ -151,7 +152,7 @@
             flex-wrap: wrap;
             justify-content: center;
             padding: 20px;
-            margin-top: 70px; /* Make sure boxes stay under the navbar */
+            margin-top: 20px;
         }
 
         .box-container {
@@ -235,11 +236,10 @@
     </style>
 </head>
 <body>
-    <div class="navbar">
-        <h1>Logo</h1>
-        <div class="search-bar">
-            <input class="search-input" type="text" placeholder="Search by first letter">
-        </div>
+    <div class="navbar">Games</div>
+    
+    <div class="search-bar">
+        <input type="text" class="search-input" placeholder="Search...">
     </div>
 
     <div class="box-container-wrapper">
@@ -250,13 +250,14 @@
             <button class="play-button">Play</button>
         </a>
         
-        <a href="https://galactic-mu.vercel.app/gfiles/eaglercraft/" class="box-container" id="box2">
+        <a href="https://galactic-mu.vercel.app/gfiles/eaglercraft/" class "box-container" id="box2">
             <img src="unnamed (2).png" alt="Minecraft" class="box-image">
             <div class="box-title">Minecraft</div>
             <div class="box-description">Minecraft Unblocked</div>
             <button class="play-button">Play</button>
         </a>
 
+        <!-- Add more boxes here -->
         <a href="https://galactic-mu.vercel.app/gfiles/retro-bowl/" class="box-container" id="box3">
             <img src="unnamed (3).png" alt="Retrobowl" class="box-image">
             <div class="box-title">Retrobowl</div>
@@ -277,28 +278,28 @@
             <div class="box-description">Moto X3M Unblocked</div>
             <button class="play-button">Play</button>
         </a>
-
+        
         <a href="https://galactic-mu.vercel.app/gfiles/slope/" class="box-container" id="box6">
             <img src="images.jpeg" alt="Slope" class="box-image">
             <div class="box-title">Slope</div>
             <div class="box-description">Slope Unblocked</div>
             <button class="play-button">Play</button>
         </a>
-
+      
         <a href="https://galactic-mu.vercel.app/gfiles/subway-surfers/" class="box-container" id="box7">
             <img src="unnamed (4).png" alt="Subway Surfers" class="box-image">
             <div class="box-title">Subway Surfers</div>
             <div class="box-description">Subway Surfers Unblocked</div>
             <button class="play-button">Play</button>
         </a>
-
+        
         <a href="https://galactic-mu.vercel.app/gfiles/madalin-cars-2/" class="box-container" id="box8">
             <img src="30567.jpg" alt="Madalin Stunt Cars 2" class="box-image">
             <div class="box-title">Madalin Stunt Cars 2</div>
             <div class="box-description">Madalin Stunt Cars 2 Unblocked</div>
             <button class="play-button">Play</button>
         </a>
-
+        
         <a href="https://galactic-mu.vercel.app/gfiles/temple-run-2/" class="box-container" id="box9">
             <img src="Temple_Run_2-removebg-preview.png" alt="Temple Run 2" class="box-image">
             <div class="box-title">Temple Run 2</div>
@@ -327,6 +328,8 @@
             <button class="play-button">Play</button>
         </a>
     </div>
+
+    <div style="height: 2000px; background-color: #f0f0f0;"></div>
 
     <script>
         // JavaScript to control box animations
@@ -362,3 +365,4 @@
     </script>
 </body>
 </html>
+
